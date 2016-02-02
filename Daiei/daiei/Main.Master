@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Daiei.Main" %>
+
+<%@ Register Src="assets/control/import.ascx" TagName="import" TagPrefix="import" %>
+<%@ Register Src="assets/control/header.ascx" TagName="header" TagPrefix="header" %>
+<%@ Register Src="assets/control/footer.ascx" TagName="footer" TagPrefix="footer" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <import:import ID="import" runat="server" />
+</head>
+<body class="home page page-template-default">
+    <div class="site-wrap">
+        <form runat="server" class="main-form">
+            <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+            </telerik:RadScriptManager>
+            <telerik:RadAjaxManager ID="RAMP_Master" runat="server">
+            </telerik:RadAjaxManager>
+            <telerik:RadAjaxLoadingPanel ID="loadingPanel" runat="server" Skin="Metro">
+            </telerik:RadAjaxLoadingPanel>
+            <div class="header-wrap clearfix">
+                <header:header ID="header" runat="server" />
+                <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="content-wrap">
+                <section class="site-content container">
+                    <asp:ContentPlaceHolder ID="PageContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+            </div>
+        </form>
+        <asp:ContentPlaceHolder ID="PreFooter" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="footer-wrap">
+            <footer:footer ID="footer" runat="server" />
+        </div>
+    </div>
+</body>
+</html>

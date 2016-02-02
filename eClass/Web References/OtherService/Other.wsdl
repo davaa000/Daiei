@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://police.gov/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://police.gov/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://police.gov/">
+      <s:element name="getNewBNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkHistory_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNewBNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNewBNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUrlByFormName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUrlByFormNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUrlByFormNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBNoNumberFormatted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pBNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBNoNumberFormattedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBNoNumberFormattedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="convertAsciiToUTF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="word" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="convertAsciiToUTFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="convertAsciiToUTFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoIDByCrimeNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crimeNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoIDByCrimeNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBnoIDByCrimeNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCrimeNoByBnoID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bno_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCrimeNoByBnoIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCrimeNoByBnoIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoIDByBno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoIDByBnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBnoIDByBnoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoIDByBnoHistoryID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bnoHistoryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoIDByBnoHistoryIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBnoIDByBnoHistoryIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkerByWorkHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workHistoryID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWorkerByWorkHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getWorkerByWorkHistoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFormattedBnoByBnoID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bnoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFormattedBnoByBnoIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFormattedBnoByBnoIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoByBnoID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bnoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoByBnoIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBnoByBnoIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoByBnoHistoryID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bnoHistoryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBnoByBnoHistoryIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBnoByBnoHistoryIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFields">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="flds" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckFieldsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckFieldsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="end" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSystemDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSystemDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getSystemDateResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="convertTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="convertTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="convertTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="convertDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="convertDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="convertDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getChar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCharResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCharResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mergeDateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="time" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mergeDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mergeDateTimeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkShiidOgnoo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="M1100_ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workHistoryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkShiidOgnooResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkShiidOgnooResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getNewBNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getNewBNo" />
+  </wsdl:message>
+  <wsdl:message name="getNewBNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getNewBNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUrlByFormNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getUrlByFormName" />
+  </wsdl:message>
+  <wsdl:message name="getUrlByFormNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getUrlByFormNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBNoNumberFormattedSoapIn">
+    <wsdl:part name="parameters" element="tns:getBNoNumberFormatted" />
+  </wsdl:message>
+  <wsdl:message name="getBNoNumberFormattedSoapOut">
+    <wsdl:part name="parameters" element="tns:getBNoNumberFormattedResponse" />
+  </wsdl:message>
+  <wsdl:message name="convertAsciiToUTFSoapIn">
+    <wsdl:part name="parameters" element="tns:convertAsciiToUTF" />
+  </wsdl:message>
+  <wsdl:message name="convertAsciiToUTFSoapOut">
+    <wsdl:part name="parameters" element="tns:convertAsciiToUTFResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBnoIDByCrimeNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getBnoIDByCrimeNo" />
+  </wsdl:message>
+  <wsdl:message name="getBnoIDByCrimeNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getBnoIDByCrimeNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCrimeNoByBnoIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getCrimeNoByBnoID" />
+  </wsdl:message>
+  <wsdl:message name="getCrimeNoByBnoIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getCrimeNoByBnoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBnoIDByBnoSoapIn">
+    <wsdl:part name="parameters" element="tns:getBnoIDByBno" />
+  </wsdl:message>
+  <wsdl:message name="getBnoIDByBnoSoapOut">
+    <wsdl:part name="parameters" element="tns:getBnoIDByBnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBnoIDByBnoHistoryIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getBnoIDByBnoHistoryID" />
+  </wsdl:message>
+  <wsdl:message name="getBnoIDByBnoHistoryIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getBnoIDByBnoHistoryIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWorkerByWorkHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:getWorkerByWorkHistory" />
+  </wsdl:message>
+  <wsdl:message name="getWorkerByWorkHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:getWorkerByWorkHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFormattedBnoByBnoIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getFormattedBnoByBnoID" />
+  </wsdl:message>
+  <wsdl:message name="getFormattedBnoByBnoIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getFormattedBnoByBnoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBnoByBnoIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getBnoByBnoID" />
+  </wsdl:message>
+  <wsdl:message name="getBnoByBnoIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getBnoByBnoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBnoByBnoHistoryIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getBnoByBnoHistoryID" />
+  </wsdl:message>
+  <wsdl:message name="getBnoByBnoHistoryIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getBnoByBnoHistoryIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckFieldsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckFields" />
+  </wsdl:message>
+  <wsdl:message name="CheckFieldsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPSoapIn">
+    <wsdl:part name="parameters" element="tns:UP" />
+  </wsdl:message>
+  <wsdl:message name="UPSoapOut">
+    <wsdl:part name="parameters" element="tns:UPResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateTime" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSystemDateSoapIn">
+    <wsdl:part name="parameters" element="tns:getSystemDate" />
+  </wsdl:message>
+  <wsdl:message name="getSystemDateSoapOut">
+    <wsdl:part name="parameters" element="tns:getSystemDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="convertTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:convertTime" />
+  </wsdl:message>
+  <wsdl:message name="convertTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:convertTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="convertDateSoapIn">
+    <wsdl:part name="parameters" element="tns:convertDate" />
+  </wsdl:message>
+  <wsdl:message name="convertDateSoapOut">
+    <wsdl:part name="parameters" element="tns:convertDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCharSoapIn">
+    <wsdl:part name="parameters" element="tns:getChar" />
+  </wsdl:message>
+  <wsdl:message name="getCharSoapOut">
+    <wsdl:part name="parameters" element="tns:getCharResponse" />
+  </wsdl:message>
+  <wsdl:message name="mergeDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:mergeDateTime" />
+  </wsdl:message>
+  <wsdl:message name="mergeDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:mergeDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkShiidOgnooSoapIn">
+    <wsdl:part name="parameters" element="tns:checkShiidOgnoo" />
+  </wsdl:message>
+  <wsdl:message name="checkShiidOgnooSoapOut">
+    <wsdl:part name="parameters" element="tns:checkShiidOgnooResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OtherSoap">
+    <wsdl:operation name="getNewBNo">
+      <wsdl:input message="tns:getNewBNoSoapIn" />
+      <wsdl:output message="tns:getNewBNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByFormName">
+      <wsdl:input message="tns:getUrlByFormNameSoapIn" />
+      <wsdl:output message="tns:getUrlByFormNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBNoNumberFormatted">
+      <wsdl:input message="tns:getBNoNumberFormattedSoapIn" />
+      <wsdl:output message="tns:getBNoNumberFormattedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="convertAsciiToUTF">
+      <wsdl:input message="tns:convertAsciiToUTFSoapIn" />
+      <wsdl:output message="tns:convertAsciiToUTFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByCrimeNo">
+      <wsdl:input message="tns:getBnoIDByCrimeNoSoapIn" />
+      <wsdl:output message="tns:getBnoIDByCrimeNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCrimeNoByBnoID">
+      <wsdl:input message="tns:getCrimeNoByBnoIDSoapIn" />
+      <wsdl:output message="tns:getCrimeNoByBnoIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByBno">
+      <wsdl:input message="tns:getBnoIDByBnoSoapIn" />
+      <wsdl:output message="tns:getBnoIDByBnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByBnoHistoryID">
+      <wsdl:input message="tns:getBnoIDByBnoHistoryIDSoapIn" />
+      <wsdl:output message="tns:getBnoIDByBnoHistoryIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkerByWorkHistory">
+      <wsdl:input message="tns:getWorkerByWorkHistorySoapIn" />
+      <wsdl:output message="tns:getWorkerByWorkHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFormattedBnoByBnoID">
+      <wsdl:input message="tns:getFormattedBnoByBnoIDSoapIn" />
+      <wsdl:output message="tns:getFormattedBnoByBnoIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBnoByBnoID">
+      <wsdl:input message="tns:getBnoByBnoIDSoapIn" />
+      <wsdl:output message="tns:getBnoByBnoIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBnoByBnoHistoryID">
+      <wsdl:input message="tns:getBnoByBnoHistoryIDSoapIn" />
+      <wsdl:output message="tns:getBnoByBnoHistoryIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFields">
+      <wsdl:input message="tns:CheckFieldsSoapIn" />
+      <wsdl:output message="tns:CheckFieldsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UP">
+      <wsdl:input message="tns:UPSoapIn" />
+      <wsdl:output message="tns:UPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTime">
+      <wsdl:input message="tns:CalculateTimeSoapIn" />
+      <wsdl:output message="tns:CalculateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSystemDate">
+      <wsdl:input message="tns:getSystemDateSoapIn" />
+      <wsdl:output message="tns:getSystemDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="convertTime">
+      <wsdl:input message="tns:convertTimeSoapIn" />
+      <wsdl:output message="tns:convertTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="convertDate">
+      <wsdl:input message="tns:convertDateSoapIn" />
+      <wsdl:output message="tns:convertDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getChar">
+      <wsdl:input message="tns:getCharSoapIn" />
+      <wsdl:output message="tns:getCharSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mergeDateTime">
+      <wsdl:input message="tns:mergeDateTimeSoapIn" />
+      <wsdl:output message="tns:mergeDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkShiidOgnoo">
+      <wsdl:input message="tns:checkShiidOgnooSoapIn" />
+      <wsdl:output message="tns:checkShiidOgnooSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OtherSoap" type="tns:OtherSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getNewBNo">
+      <soap:operation soapAction="http://police.gov/getNewBNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByFormName">
+      <soap:operation soapAction="http://police.gov/getUrlByFormName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBNoNumberFormatted">
+      <soap:operation soapAction="http://police.gov/getBNoNumberFormatted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertAsciiToUTF">
+      <soap:operation soapAction="http://police.gov/convertAsciiToUTF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByCrimeNo">
+      <soap:operation soapAction="http://police.gov/getBnoIDByCrimeNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCrimeNoByBnoID">
+      <soap:operation soapAction="http://police.gov/getCrimeNoByBnoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByBno">
+      <soap:operation soapAction="http://police.gov/getBnoIDByBno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByBnoHistoryID">
+      <soap:operation soapAction="http://police.gov/getBnoIDByBnoHistoryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkerByWorkHistory">
+      <soap:operation soapAction="http://police.gov/getWorkerByWorkHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFormattedBnoByBnoID">
+      <soap:operation soapAction="http://police.gov/getFormattedBnoByBnoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoByBnoID">
+      <soap:operation soapAction="http://police.gov/getBnoByBnoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoByBnoHistoryID">
+      <soap:operation soapAction="http://police.gov/getBnoByBnoHistoryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFields">
+      <soap:operation soapAction="http://police.gov/CheckFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UP">
+      <soap:operation soapAction="http://police.gov/UP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTime">
+      <soap:operation soapAction="http://police.gov/CalculateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSystemDate">
+      <soap:operation soapAction="http://police.gov/getSystemDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertTime">
+      <soap:operation soapAction="http://police.gov/convertTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertDate">
+      <soap:operation soapAction="http://police.gov/convertDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChar">
+      <soap:operation soapAction="http://police.gov/getChar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mergeDateTime">
+      <soap:operation soapAction="http://police.gov/mergeDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkShiidOgnoo">
+      <soap:operation soapAction="http://police.gov/checkShiidOgnoo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OtherSoap12" type="tns:OtherSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getNewBNo">
+      <soap12:operation soapAction="http://police.gov/getNewBNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByFormName">
+      <soap12:operation soapAction="http://police.gov/getUrlByFormName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBNoNumberFormatted">
+      <soap12:operation soapAction="http://police.gov/getBNoNumberFormatted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertAsciiToUTF">
+      <soap12:operation soapAction="http://police.gov/convertAsciiToUTF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByCrimeNo">
+      <soap12:operation soapAction="http://police.gov/getBnoIDByCrimeNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCrimeNoByBnoID">
+      <soap12:operation soapAction="http://police.gov/getCrimeNoByBnoID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByBno">
+      <soap12:operation soapAction="http://police.gov/getBnoIDByBno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoIDByBnoHistoryID">
+      <soap12:operation soapAction="http://police.gov/getBnoIDByBnoHistoryID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkerByWorkHistory">
+      <soap12:operation soapAction="http://police.gov/getWorkerByWorkHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFormattedBnoByBnoID">
+      <soap12:operation soapAction="http://police.gov/getFormattedBnoByBnoID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoByBnoID">
+      <soap12:operation soapAction="http://police.gov/getBnoByBnoID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBnoByBnoHistoryID">
+      <soap12:operation soapAction="http://police.gov/getBnoByBnoHistoryID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFields">
+      <soap12:operation soapAction="http://police.gov/CheckFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UP">
+      <soap12:operation soapAction="http://police.gov/UP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTime">
+      <soap12:operation soapAction="http://police.gov/CalculateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSystemDate">
+      <soap12:operation soapAction="http://police.gov/getSystemDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertTime">
+      <soap12:operation soapAction="http://police.gov/convertTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertDate">
+      <soap12:operation soapAction="http://police.gov/convertDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChar">
+      <soap12:operation soapAction="http://police.gov/getChar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mergeDateTime">
+      <soap12:operation soapAction="http://police.gov/mergeDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkShiidOgnoo">
+      <soap12:operation soapAction="http://police.gov/checkShiidOgnoo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Other">
+    <wsdl:port name="OtherSoap" binding="tns:OtherSoap">
+      <soap:address location="http://localhost:8082/Other.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OtherSoap12" binding="tns:OtherSoap12">
+      <soap12:address location="http://localhost:8082/Other.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

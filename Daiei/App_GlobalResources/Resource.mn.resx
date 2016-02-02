@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name="Home" xml:space="preserve"> <value>Нүүр</value></data>
+<data name="PackageCheckStatus" xml:space="preserve"> <value>Төлөв шалгах</value></data>
+<data name="PackageRegister" xml:space="preserve"> <value>Илгээмж бүртгэх</value></data>
+<data name="PackageList" xml:space="preserve"> <value>Бүртгэгдсэн илгээмжүүд</value></data>
+<data name="PackageCalc" xml:space="preserve"> <value>Илгээмж тооцоолох</value></data>
+<data name="TermsOfService" xml:space="preserve"> <value>Үйлчилгээний нөхцөл</value></data>
+<data name="Guideline" xml:space="preserve"> <value>Хэрэглэх заавар</value></data>
+<data name="Login" xml:space="preserve"> <value>Нэвтрэх</value></data>
+<data name="UserRegister" xml:space="preserve"> <value>Бүртгүүлэх</value></data>
+<data name="EnterValue" xml:space="preserve"> <value>Утга оруулна уу</value></data>
+<data name="User" xml:space="preserve"> <value>Хэрэглэгч</value></data>
+<data name="UserInformation" xml:space="preserve"> <value>Хувийн мэдээлэл</value></data>
+<data name="UserID" xml:space="preserve"> <value>Хэрэглэгчийн код</value></data>
+<data name="UserName" xml:space="preserve"> <value>Нэр</value></data>
+<data name="Email" xml:space="preserve"> <value>Имэйл</value></data>
+<data name="PhoneMongolia" xml:space="preserve"> <value>Утас (Монгол)</value></data>
+<data name="PhoneJapan" xml:space="preserve"> <value>Утас (Япон)</value></data>
+<data name="AddressMongolia" xml:space="preserve"> <value>Хаяг (Монгол)</value></data>
+<data name="AddressJapan" xml:space="preserve"> <value>Хаяг (Япон)</value></data>
+<data name="PackageTotal" xml:space="preserve"> <value>Нийт илгээмж</value></data>
+<data name="ChangePassword" xml:space="preserve"> <value>Нууц үг өөрчлөх</value></data>
+<data name="ChangeUserInformation" xml:space="preserve"> <value>Хувийн мэдээлэл өөрчлөх</value></data>
+<data name="Package" xml:space="preserve"> <value>Илгээмж</value></data>
+<data name="NewPackage" xml:space="preserve"> <value>Шинэ илгээмж бүртгэх</value></data>
+<data name="PackageUser" xml:space="preserve"> <value>Илгээмж явуулж байгаа хэрэглэгч</value></data>
+<data name="PackageReciever" xml:space="preserve"> <value>Монголд хүлээн авагчийн нэр</value></data>
+<data name="RecieverAddress" xml:space="preserve"> <value>Монголд хүлээн авагчийн хаяг</value></data>
+<data name="RecieverPhone" xml:space="preserve"> <value>Монгол хүлээн авагчийн утас</value></data>
+<data name="PackageDescription" xml:space="preserve"> <value>Илгээмжийн ерөнхий тайлбар</value></data>
+<data name="OrderCustomer" xml:space="preserve"> <value>Захиалга хэний нэр дээр ирэх</value></data>
+<data name="OrderNo" xml:space="preserve"> <value>Захиалгын дугаар</value></data>
+<data name="OrderTrackingNo" xml:space="preserve"> <value>Тракин дугаар</value></data>
+<data name="OrderWebSite" xml:space="preserve"> <value>Сайтын хаяг (URL)</value></data>
+<data name="EnterItems" xml:space="preserve"> <value>Барааны мэдээлэл оруулах</value></data>
+<data name="ItemName" xml:space="preserve"> <value>Барааны нэр</value></data>
+<data name="ItemBrand" xml:space="preserve"> <value>Бренд нэр</value></data>
+<data name="ItemCount" xml:space="preserve"> <value>Тоо ширхэг</value></data>
+<data name="ItemUnitPrice" xml:space="preserve"> <value>Нэгж үнэ</value></data>
+<data name="ItemTotalPrice" xml:space="preserve"> <value>Нийт үнэ</value></data>
+<data name="Add" xml:space="preserve"> <value>Нэмэх</value></data>
+<data name="Emptylist" xml:space="preserve"> <value>Жагсаалт хоосон</value></data>
+<data name="Total" xml:space="preserve"> <value>Нийт:</value></data>
+<data name="SalesTax" xml:space="preserve"> <value>Татвар</value></data>
+<data name="Shipping" xml:space="preserve"> <value>Тээврийн зардал</value></data>
+<data name="Discount" xml:space="preserve"> <value>Хямдрал</value></data>
+<data name="OrderTotalAmount" xml:space="preserve"> <value>Захиалгын нийт үнэ</value></data>
+<data name="PackageConfirmation" xml:space="preserve"> <value>Илгээмж баталгаажуулах</value></data>
+<data name="PackageCancellation" xml:space="preserve"> <value>Илгээмжийг цуцлах</value></data>
+<data name="Calculation" xml:space="preserve"> <value>Тооцоолуур</value></data>
+<data name="Weight" xml:space="preserve"> <value>Жин</value></data>
+<data name="Length" xml:space="preserve"> <value>Урт</value></data>
+<data name="Width" xml:space="preserve"> <value>Өргөн</value></data>
+<data name="height" xml:space="preserve"> <value>Өндөр</value></data>
+<data name="Calculate" xml:space="preserve"> <value>Тооцоолох</value></data>
+<data name="Cost" xml:space="preserve"> <value>Зардал</value></data>
+<data name="OldPassword" xml:space="preserve"> <value>Хуучин нууц үг</value></data>
+<data name="NewPassword" xml:space="preserve"> <value>Шинэ нууц үг</value></data>
+<data name="ConfirmationPassword" xml:space="preserve"> <value>Нууц үг давтах</value></data>
+<data name="Save" xml:space="preserve"> <value>Хадгалах</value></data>
+<data name="LastLogin" xml:space="preserve"> <value>Сүүлийн нэвтрэлт</value></data>
+<data name="Last5Package" xml:space="preserve"> <value>Сүүлийн 5 илгээмж</value></data>
+<data name="LastName" xml:space="preserve"> <value>Эцэг /эх/-ийн нэр</value></data>
+<data name="EnterCorrectValue" xml:space="preserve"> <value>Зөв утга оруулна уу</value></data>
+<data name="PackageStatus" xml:space="preserve"> <value>Илгээмжийн төлөв</value></data>
+<data name="Date" xml:space="preserve"> <value>Огноо</value></data>
+<data name="Description" xml:space="preserve"> <value>Тайлбар</value></data>
+<data name="PackageInformation" xml:space="preserve"> <value>Илгээмжийн мэдээлэл</value></data>
+<data name="CreatedUser" xml:space="preserve"> <value>Бүртгэсэн хэрэглэгч</value></data>
+<data name="PackageTabiNo" xml:space="preserve"> <value>Таби.мн илгээмжийн дугаар</value></data>
+<data name="PackageWeight" xml:space="preserve"> <value>Илгээмжийн жин</value></data>
+<data name="PackageVolume" xml:space="preserve"> <value>Илгээмжийн эзэлхүүн</value></data>
+<data name="PackageTransportFee" xml:space="preserve"> <value>Илгээмжийн төлбөр</value></data>
+<data name="ChangePackageInformation" xml:space="preserve"> <value>Илгээмийн мэдээлэл засварлах</value></data>
+<data name="LoginSection" xml:space="preserve"> <value>Нэвтрэх хэсэг</value></data>
+<data name="Introduction" xml:space="preserve"> <value>Японоос 7 хоногт Монголд</value></data>
+<data name="BriefGuideLine" xml:space="preserve"> <value>Та хэрэглэгчээр бүртгүүлж, илгээмжийн мэдээллийг системд оруулсанаар манай үйлчилгээг авч эхэлнэ.</value></data>
+<data name="JapanShopping" xml:space="preserve"> <value>Японы онлайн дэлгүүрээс бараа авах зөвөлгөө</value></data>
+<data name="OtherService" xml:space="preserve"> <value>Бусад үйлчилгээ</value></data>
+<data name="Onnetsu" xml:space="preserve"> <value>Оннэцү халуун бариа</value></data>
+<data name="FishService" xml:space="preserve"> <value>Загас, далайн бүтээгдэхүүний захиалга</value></data>
+<data name="AutoParts" xml:space="preserve"> <value>Авто сэлбэг</value></data>
+<data name="EnterEmail" xml:space="preserve"> <value>E-mail хаягаа зөв оруулна уу</value></data>
+<data name="ResetPassword" xml:space="preserve"> <value>Нууц үг шинэчлэх</value></data>
+<data name="ForgotPassword" xml:space="preserve"> <value>Нууц үг мартсан</value></data>
+<data name="FillFollowingInformation" xml:space="preserve"> <value>Дараах мэдээллүүдийг оруулна уу</value></data>
+<data name="Password" xml:space="preserve"> <value>Нууц үг</value></data>
+</root>

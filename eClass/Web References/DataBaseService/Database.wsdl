@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://police.gov/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://police.gov/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://police.gov/">
+      <s:element name="ExecuteQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCommandText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteQueryOndb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCommandText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteQueryOndbResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteQueryOndbResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteQueryWithDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCommandText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Deploy_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parameters" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecuteQueryWithDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteQueryWithDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteNonQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SqlList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteNonQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteNonQueryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteNonQueryStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteNonQueryStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteNonQueryStrResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WhereStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectFieldValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDateFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WhereStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectDateFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SelectDateFieldValueResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectBlobFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="whereStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectBlobFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectBlobFieldValueResult" type="tns:Image" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Image" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MarshalByRefObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Tag" />
+              <s:element minOccurs="0" maxOccurs="1" name="Palette" type="tns:ColorPalette" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MarshalByRefObject" abstract="true" />
+      <s:complexType name="ColorPalette" />
+      <s:element name="SaveTableData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fields" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTableDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveTableDataResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveFieldValueResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDateFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDateFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveDateFieldValueResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyFieldValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveClobFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCommandText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveClobFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveClobFieldValueResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTableData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WhereStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTableDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteTableDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FunctionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallFunctionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Table_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Table_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Active" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Restore" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActiveResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSequenceValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Old_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSequenceValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSequenceValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExecuteQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteQuery" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQueryOndbSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryOndb" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQueryOndbSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryOndbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQueryWithDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryWithDate" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQueryWithDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryWithDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteNonQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteNonQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteNonQueryStrSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQueryStr" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteNonQueryStrSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQueryStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectFieldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="SelectFieldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectDateFieldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectDateFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="SelectDateFieldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectDateFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectBlobFieldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectBlobFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="SelectBlobFieldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectBlobFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTableDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTableData" />
+  </wsdl:message>
+  <wsdl:message name="SaveTableDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTableDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFieldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="SaveFieldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDateFieldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDateFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="SaveDateFieldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDateFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveClobFieldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveClobFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="SaveClobFieldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveClobFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTableDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTableData" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTableDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTableDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:CallFunction" />
+  </wsdl:message>
+  <wsdl:message name="CallFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:CallFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="setActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:setActive" />
+  </wsdl:message>
+  <wsdl:message name="setActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:setActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSequenceValueSoapIn">
+    <wsdl:part name="parameters" element="tns:getSequenceValue" />
+  </wsdl:message>
+  <wsdl:message name="getSequenceValueSoapOut">
+    <wsdl:part name="parameters" element="tns:getSequenceValueResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DatabaseSoap">
+    <wsdl:operation name="ExecuteQuery">
+      <wsdl:input message="tns:ExecuteQuerySoapIn" />
+      <wsdl:output message="tns:ExecuteQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQueryOndb">
+      <wsdl:input message="tns:ExecuteQueryOndbSoapIn" />
+      <wsdl:output message="tns:ExecuteQueryOndbSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQueryWithDate">
+      <wsdl:input message="tns:ExecuteQueryWithDateSoapIn" />
+      <wsdl:output message="tns:ExecuteQueryWithDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQuery">
+      <wsdl:input message="tns:ExecuteNonQuerySoapIn" />
+      <wsdl:output message="tns:ExecuteNonQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQueryStr">
+      <wsdl:input message="tns:ExecuteNonQueryStrSoapIn" />
+      <wsdl:output message="tns:ExecuteNonQueryStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFieldValue">
+      <wsdl:input message="tns:SelectFieldValueSoapIn" />
+      <wsdl:output message="tns:SelectFieldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDateFieldValue">
+      <wsdl:input message="tns:SelectDateFieldValueSoapIn" />
+      <wsdl:output message="tns:SelectDateFieldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectBlobFieldValue">
+      <wsdl:input message="tns:SelectBlobFieldValueSoapIn" />
+      <wsdl:output message="tns:SelectBlobFieldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTableData">
+      <wsdl:input message="tns:SaveTableDataSoapIn" />
+      <wsdl:output message="tns:SaveTableDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFieldValue">
+      <wsdl:input message="tns:SaveFieldValueSoapIn" />
+      <wsdl:output message="tns:SaveFieldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDateFieldValue">
+      <wsdl:input message="tns:SaveDateFieldValueSoapIn" />
+      <wsdl:output message="tns:SaveDateFieldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveClobFieldValue">
+      <wsdl:input message="tns:SaveClobFieldValueSoapIn" />
+      <wsdl:output message="tns:SaveClobFieldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTableData">
+      <wsdl:input message="tns:DeleteTableDataSoapIn" />
+      <wsdl:output message="tns:DeleteTableDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallFunction">
+      <wsdl:input message="tns:CallFunctionSoapIn" />
+      <wsdl:output message="tns:CallFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setActive">
+      <wsdl:input message="tns:setActiveSoapIn" />
+      <wsdl:output message="tns:setActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSequenceValue">
+      <wsdl:input message="tns:getSequenceValueSoapIn" />
+      <wsdl:output message="tns:getSequenceValueSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DatabaseSoap" type="tns:DatabaseSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteQuery">
+      <soap:operation soapAction="http://police.gov/ExecuteQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQueryOndb">
+      <soap:operation soapAction="http://police.gov/ExecuteQueryOndb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQueryWithDate">
+      <soap:operation soapAction="http://police.gov/ExecuteQueryWithDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQuery">
+      <soap:operation soapAction="http://police.gov/ExecuteNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQueryStr">
+      <soap:operation soapAction="http://police.gov/ExecuteNonQueryStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFieldValue">
+      <soap:operation soapAction="http://police.gov/SelectFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDateFieldValue">
+      <soap:operation soapAction="http://police.gov/SelectDateFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectBlobFieldValue">
+      <soap:operation soapAction="http://police.gov/SelectBlobFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTableData">
+      <soap:operation soapAction="http://police.gov/SaveTableData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFieldValue">
+      <soap:operation soapAction="http://police.gov/SaveFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDateFieldValue">
+      <soap:operation soapAction="http://police.gov/SaveDateFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveClobFieldValue">
+      <soap:operation soapAction="http://police.gov/SaveClobFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTableData">
+      <soap:operation soapAction="http://police.gov/DeleteTableData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallFunction">
+      <soap:operation soapAction="http://police.gov/CallFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActive">
+      <soap:operation soapAction="http://police.gov/setActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSequenceValue">
+      <soap:operation soapAction="http://police.gov/getSequenceValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DatabaseSoap12" type="tns:DatabaseSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteQuery">
+      <soap12:operation soapAction="http://police.gov/ExecuteQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQueryOndb">
+      <soap12:operation soapAction="http://police.gov/ExecuteQueryOndb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQueryWithDate">
+      <soap12:operation soapAction="http://police.gov/ExecuteQueryWithDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQuery">
+      <soap12:operation soapAction="http://police.gov/ExecuteNonQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQueryStr">
+      <soap12:operation soapAction="http://police.gov/ExecuteNonQueryStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFieldValue">
+      <soap12:operation soapAction="http://police.gov/SelectFieldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDateFieldValue">
+      <soap12:operation soapAction="http://police.gov/SelectDateFieldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectBlobFieldValue">
+      <soap12:operation soapAction="http://police.gov/SelectBlobFieldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTableData">
+      <soap12:operation soapAction="http://police.gov/SaveTableData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFieldValue">
+      <soap12:operation soapAction="http://police.gov/SaveFieldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDateFieldValue">
+      <soap12:operation soapAction="http://police.gov/SaveDateFieldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveClobFieldValue">
+      <soap12:operation soapAction="http://police.gov/SaveClobFieldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTableData">
+      <soap12:operation soapAction="http://police.gov/DeleteTableData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallFunction">
+      <soap12:operation soapAction="http://police.gov/CallFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActive">
+      <soap12:operation soapAction="http://police.gov/setActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSequenceValue">
+      <soap12:operation soapAction="http://police.gov/getSequenceValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Database">
+    <wsdl:port name="DatabaseSoap" binding="tns:DatabaseSoap">
+      <soap:address location="http://localhost:8082/Database.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DatabaseSoap12" binding="tns:DatabaseSoap12">
+      <soap12:address location="http://localhost:8082/Database.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

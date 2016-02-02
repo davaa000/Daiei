@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://police.gov/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://police.gov/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://police.gov/">
+      <s:element name="whereSqlAllPermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserOfficialName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfficialPosition" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Worker_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkHistoryID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoginUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Alba_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlbaName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zone_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Agent_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Department_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrganizationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptGazar_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptHeltes_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptTasag_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptHeseg_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptFullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GazarName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HeltesName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TasagName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Human_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Connected_IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="whereSqlAllPermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="whereSqlAllPermissionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="whereSqlWithPermissions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="permissions" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="archiveOractive" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="whereSqlWithPermissionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="whereSqlWithPermissionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accessFrameSql">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessFrame" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accessFrameSqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessFrameSqlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkFormResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkFormWithPermissions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="permissions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkFormWithPermissionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkFormWithPermissionsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkFormWithAccessFrame">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessFrame" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkFormWithAccessFrameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkFormWithAccessFrameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkFormWithAccessFramePermissions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessFrame" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="permissions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkFormWithAccessFramePermissionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkFormWithAccessFramePermissionsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkRowWithPermissions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pBNoHistory_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="permissions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkRowWithPermissionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkRowWithPermissionsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkRowWithAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pBNoHistory_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="purpose" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkRowWithActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkRowWithActionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkBnoWithAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="purpose" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkBnoWithActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkBnoWithActionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="systemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkSystemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MD5">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MD5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MD5Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkUserSystemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserSystemType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserSystemTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkUserSystemTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserSystemTypeSystemID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserSystemTypeSystemIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkUserSystemTypeSystemIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pLoginUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="connectedIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUserInfoResult" type="tns:UserInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ex" type="tns:_Exception" />
+            <s:element minOccurs="0" maxOccurs="1" name="userinfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_Exception">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="functionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionTarget" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionStackTrace" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setErrorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadError">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadErrorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="tns:_Log" />
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="tns:UserInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="tableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tableID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userAction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_Log">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="functionName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadLog">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadLogResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="whereSqlAllPermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:whereSqlAllPermission" />
+  </wsdl:message>
+  <wsdl:message name="whereSqlAllPermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:whereSqlAllPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="whereSqlWithPermissionsSoapIn">
+    <wsdl:part name="parameters" element="tns:whereSqlWithPermissions" />
+  </wsdl:message>
+  <wsdl:message name="whereSqlWithPermissionsSoapOut">
+    <wsdl:part name="parameters" element="tns:whereSqlWithPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="accessFrameSqlSoapIn">
+    <wsdl:part name="parameters" element="tns:accessFrameSql" />
+  </wsdl:message>
+  <wsdl:message name="accessFrameSqlSoapOut">
+    <wsdl:part name="parameters" element="tns:accessFrameSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkFormSoapIn">
+    <wsdl:part name="parameters" element="tns:checkForm" />
+  </wsdl:message>
+  <wsdl:message name="checkFormSoapOut">
+    <wsdl:part name="parameters" element="tns:checkFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkFormWithPermissionsSoapIn">
+    <wsdl:part name="parameters" element="tns:checkFormWithPermissions" />
+  </wsdl:message>
+  <wsdl:message name="checkFormWithPermissionsSoapOut">
+    <wsdl:part name="parameters" element="tns:checkFormWithPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkFormWithAccessFrameSoapIn">
+    <wsdl:part name="parameters" element="tns:checkFormWithAccessFrame" />
+  </wsdl:message>
+  <wsdl:message name="checkFormWithAccessFrameSoapOut">
+    <wsdl:part name="parameters" element="tns:checkFormWithAccessFrameResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkFormWithAccessFramePermissionsSoapIn">
+    <wsdl:part name="parameters" element="tns:checkFormWithAccessFramePermissions" />
+  </wsdl:message>
+  <wsdl:message name="checkFormWithAccessFramePermissionsSoapOut">
+    <wsdl:part name="parameters" element="tns:checkFormWithAccessFramePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkRowWithPermissionsSoapIn">
+    <wsdl:part name="parameters" element="tns:checkRowWithPermissions" />
+  </wsdl:message>
+  <wsdl:message name="checkRowWithPermissionsSoapOut">
+    <wsdl:part name="parameters" element="tns:checkRowWithPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkRowWithActionSoapIn">
+    <wsdl:part name="parameters" element="tns:checkRowWithAction" />
+  </wsdl:message>
+  <wsdl:message name="checkRowWithActionSoapOut">
+    <wsdl:part name="parameters" element="tns:checkRowWithActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkBnoWithActionSoapIn">
+    <wsdl:part name="parameters" element="tns:checkBnoWithAction" />
+  </wsdl:message>
+  <wsdl:message name="checkBnoWithActionSoapOut">
+    <wsdl:part name="parameters" element="tns:checkBnoWithActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:checkSystem" />
+  </wsdl:message>
+  <wsdl:message name="checkSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:checkSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="MD5SoapIn">
+    <wsdl:part name="parameters" element="tns:MD5" />
+  </wsdl:message>
+  <wsdl:message name="MD5SoapOut">
+    <wsdl:part name="parameters" element="tns:MD5Response" />
+  </wsdl:message>
+  <wsdl:message name="checkUserSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserSystem" />
+  </wsdl:message>
+  <wsdl:message name="checkUserSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkUserSystemTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserSystemType" />
+  </wsdl:message>
+  <wsdl:message name="checkUserSystemTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserSystemTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkUserSystemTypeSystemIDSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserSystemTypeSystemID" />
+  </wsdl:message>
+  <wsdl:message name="checkUserSystemTypeSystemIDSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserSystemTypeSystemIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="getUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="setErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:setError" />
+  </wsdl:message>
+  <wsdl:message name="setErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:setErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadError" />
+  </wsdl:message>
+  <wsdl:message name="ReadErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="setLogSoapIn">
+    <wsdl:part name="parameters" element="tns:setLog" />
+  </wsdl:message>
+  <wsdl:message name="setLogSoapOut">
+    <wsdl:part name="parameters" element="tns:setLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadLogSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadLog" />
+  </wsdl:message>
+  <wsdl:message name="ReadLogSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadLogResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SecuritySoap">
+    <wsdl:operation name="whereSqlAllPermission">
+      <wsdl:input message="tns:whereSqlAllPermissionSoapIn" />
+      <wsdl:output message="tns:whereSqlAllPermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="whereSqlWithPermissions">
+      <wsdl:input message="tns:whereSqlWithPermissionsSoapIn" />
+      <wsdl:output message="tns:whereSqlWithPermissionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="accessFrameSql">
+      <wsdl:input message="tns:accessFrameSqlSoapIn" />
+      <wsdl:output message="tns:accessFrameSqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkForm">
+      <wsdl:input message="tns:checkFormSoapIn" />
+      <wsdl:output message="tns:checkFormSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithPermissions">
+      <wsdl:input message="tns:checkFormWithPermissionsSoapIn" />
+      <wsdl:output message="tns:checkFormWithPermissionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithAccessFrame">
+      <wsdl:input message="tns:checkFormWithAccessFrameSoapIn" />
+      <wsdl:output message="tns:checkFormWithAccessFrameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithAccessFramePermissions">
+      <wsdl:input message="tns:checkFormWithAccessFramePermissionsSoapIn" />
+      <wsdl:output message="tns:checkFormWithAccessFramePermissionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkRowWithPermissions">
+      <wsdl:input message="tns:checkRowWithPermissionsSoapIn" />
+      <wsdl:output message="tns:checkRowWithPermissionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkRowWithAction">
+      <wsdl:input message="tns:checkRowWithActionSoapIn" />
+      <wsdl:output message="tns:checkRowWithActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkBnoWithAction">
+      <wsdl:input message="tns:checkBnoWithActionSoapIn" />
+      <wsdl:output message="tns:checkBnoWithActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkSystem">
+      <wsdl:input message="tns:checkSystemSoapIn" />
+      <wsdl:output message="tns:checkSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MD5">
+      <wsdl:input message="tns:MD5SoapIn" />
+      <wsdl:output message="tns:MD5SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystem">
+      <wsdl:input message="tns:checkUserSystemSoapIn" />
+      <wsdl:output message="tns:checkUserSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystemType">
+      <wsdl:input message="tns:checkUserSystemTypeSoapIn" />
+      <wsdl:output message="tns:checkUserSystemTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystemTypeSystemID">
+      <wsdl:input message="tns:checkUserSystemTypeSystemIDSoapIn" />
+      <wsdl:output message="tns:checkUserSystemTypeSystemIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfo">
+      <wsdl:input message="tns:getUserInfoSoapIn" />
+      <wsdl:output message="tns:getUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setError">
+      <wsdl:input message="tns:setErrorSoapIn" />
+      <wsdl:output message="tns:setErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadError">
+      <wsdl:input message="tns:ReadErrorSoapIn" />
+      <wsdl:output message="tns:ReadErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setLog">
+      <wsdl:input message="tns:setLogSoapIn" />
+      <wsdl:output message="tns:setLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadLog">
+      <wsdl:input message="tns:ReadLogSoapIn" />
+      <wsdl:output message="tns:ReadLogSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecuritySoap" type="tns:SecuritySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="whereSqlAllPermission">
+      <soap:operation soapAction="http://police.gov/whereSqlAllPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="whereSqlWithPermissions">
+      <soap:operation soapAction="http://police.gov/whereSqlWithPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accessFrameSql">
+      <soap:operation soapAction="http://police.gov/accessFrameSql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkForm">
+      <soap:operation soapAction="http://police.gov/checkForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithPermissions">
+      <soap:operation soapAction="http://police.gov/checkFormWithPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithAccessFrame">
+      <soap:operation soapAction="http://police.gov/checkFormWithAccessFrame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithAccessFramePermissions">
+      <soap:operation soapAction="http://police.gov/checkFormWithAccessFramePermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkRowWithPermissions">
+      <soap:operation soapAction="http://police.gov/checkRowWithPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkRowWithAction">
+      <soap:operation soapAction="http://police.gov/checkRowWithAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkBnoWithAction">
+      <soap:operation soapAction="http://police.gov/checkBnoWithAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkSystem">
+      <soap:operation soapAction="http://police.gov/checkSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MD5">
+      <soap:operation soapAction="http://police.gov/MD5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystem">
+      <soap:operation soapAction="http://police.gov/checkUserSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystemType">
+      <soap:operation soapAction="http://police.gov/checkUserSystemType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystemTypeSystemID">
+      <soap:operation soapAction="http://police.gov/checkUserSystemTypeSystemID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfo">
+      <soap:operation soapAction="http://police.gov/getUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setError">
+      <soap:operation soapAction="http://police.gov/setError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadError">
+      <soap:operation soapAction="http://police.gov/ReadError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLog">
+      <soap:operation soapAction="http://police.gov/setLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadLog">
+      <soap:operation soapAction="http://police.gov/ReadLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SecuritySoap12" type="tns:SecuritySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="whereSqlAllPermission">
+      <soap12:operation soapAction="http://police.gov/whereSqlAllPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="whereSqlWithPermissions">
+      <soap12:operation soapAction="http://police.gov/whereSqlWithPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accessFrameSql">
+      <soap12:operation soapAction="http://police.gov/accessFrameSql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkForm">
+      <soap12:operation soapAction="http://police.gov/checkForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithPermissions">
+      <soap12:operation soapAction="http://police.gov/checkFormWithPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithAccessFrame">
+      <soap12:operation soapAction="http://police.gov/checkFormWithAccessFrame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkFormWithAccessFramePermissions">
+      <soap12:operation soapAction="http://police.gov/checkFormWithAccessFramePermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkRowWithPermissions">
+      <soap12:operation soapAction="http://police.gov/checkRowWithPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkRowWithAction">
+      <soap12:operation soapAction="http://police.gov/checkRowWithAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkBnoWithAction">
+      <soap12:operation soapAction="http://police.gov/checkBnoWithAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkSystem">
+      <soap12:operation soapAction="http://police.gov/checkSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MD5">
+      <soap12:operation soapAction="http://police.gov/MD5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystem">
+      <soap12:operation soapAction="http://police.gov/checkUserSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystemType">
+      <soap12:operation soapAction="http://police.gov/checkUserSystemType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserSystemTypeSystemID">
+      <soap12:operation soapAction="http://police.gov/checkUserSystemTypeSystemID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfo">
+      <soap12:operation soapAction="http://police.gov/getUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setError">
+      <soap12:operation soapAction="http://police.gov/setError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadError">
+      <soap12:operation soapAction="http://police.gov/ReadError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLog">
+      <soap12:operation soapAction="http://police.gov/setLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadLog">
+      <soap12:operation soapAction="http://police.gov/ReadLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Security">
+    <wsdl:port name="SecuritySoap" binding="tns:SecuritySoap">
+      <soap:address location="http://localhost:8082/Security.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SecuritySoap12" binding="tns:SecuritySoap12">
+      <soap12:address location="http://localhost:8082/Security.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://police.gov/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://police.gov/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://police.gov/">
+      <s:element name="getManage">
+        <s:complexType />
+      </s:element>
+      <s:element name="getManageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getManageResult" type="tns:Manage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Manage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getForum">
+        <s:complexType />
+      </s:element>
+      <s:element name="getForumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getForumResult" type="tns:Forum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Forum">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Forum_M7100" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Forum_M7101" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getReport">
+        <s:complexType />
+      </s:element>
+      <s:element name="getReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getReportResult" type="tns:Report" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Report">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPatrol">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPatrolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPatrolResult" type="tns:Patrol" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Patrol">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5752" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5753" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5754" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5755" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5756" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5758" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5759" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5760" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5761" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5762" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5763" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5764" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5766" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5767" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5768" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5771" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5774" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5776" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5778" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5782" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5783" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5784" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBJ_5785" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getASAP">
+        <s:complexType />
+      </s:element>
+      <s:element name="getASAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getASAPResult" type="tns:ASAP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ASAP">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5400" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5401" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5411" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5412" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5417" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5421" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5422" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5423" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5424" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5425" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asap_5426" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vwM5400" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getComplaint">
+        <s:complexType />
+      </s:element>
+      <s:element name="getComplaintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getComplaintResult" type="tns:Complaint" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Complaint">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complaint_1100" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complaint_1101" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCrime">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCrimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCrimeResult" type="tns:Crime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Crime">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2100" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2101" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2102" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2103" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2104" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2105" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2106" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2107" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2108" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2109" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2110" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2201" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2202" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2301" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2302" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2303" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2304" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2401" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2402" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dashboard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crime2201_Search" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="crimeStatusChecking" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="crimeStatusSentProsecutor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="crimeStatusCanceled" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="crimeStatusPending" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="crimeStatusMerged" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="crimeStatusSent" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getSearch">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSearchResult" type="tns:Search" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Search">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_3100_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_3120_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ztb_3207_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2100_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2101_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2102_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2103_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2104_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2105_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2106_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2107_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2108_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2110_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2201_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2202_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2301_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2302_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2303_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2304_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2401_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Crime_2402_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Regiter_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YalShiitgel_Search" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complaint_1100_Search" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getHR">
+        <s:complexType />
+      </s:element>
+      <s:element name="getHRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHRResult" type="tns:HR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HR">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4000" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4000_list" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4100" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4100_list" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_OtherForm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4100_Move" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4100_Move_List" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4300_Move" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4300_list" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4400_Move" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4400_list" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4500_Move" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hr_4500_list" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getZTB">
+        <s:complexType />
+      </s:element>
+      <s:element name="getZTBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getZTBResult" type="tns:ZTB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZTB">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="addBase_Gun" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3201" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3202" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3203" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3204" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3205" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3206" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3207" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3208" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3209" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3210" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ztb_3211" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getZurchil">
+        <s:complexType />
+      </s:element>
+      <s:element name="getZurchilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getZurchilResult" type="tns:Zurchil" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Zurchil">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_Torgoson" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_Eruuljuulsen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_Saatuulsan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_Barivchilsan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_ArkhiniiEmchilgee" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_ErkhHassan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_3100" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_3102" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zurchil_3120" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getSystemUser">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSystemUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSystemUserResult" type="tns:SystemUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SystemUser">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebSystem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WindowsSystem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPoliceWebApp">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPoliceWebAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPoliceWebAppResult" type="tns:PoliceWebApp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PoliceWebApp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListRecieved" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChangeMayagtWorker" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAction">
+        <s:complexType />
+      </s:element>
+      <s:element name="getActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActionResult" type="tns:Action" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Action">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Edit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tsoholt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Shiljuuleh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Check" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TTB" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getRoles">
+        <s:complexType />
+      </s:element>
+      <s:element name="getRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRolesResult" type="tns:Roles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Roles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="permissionUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="permissionOperator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="permissionFind" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="permissionCheckUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="permissionLocalCoordinator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="permissionDirector" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="permissionAdministrator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="permissionCoordinator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessOwn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessHeseg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessTasag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessHeltes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessGazar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessAlba" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessZone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessORG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessAll" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getFormats">
+        <s:complexType />
+      </s:element>
+      <s:element name="getFormatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFormatsResult" type="tns:Formats" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Formats">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ognooOracleFull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ognooOracleTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ognooOracleShort" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ognooOracleMonth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="timeOralce" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ognooDevFull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ognooDevTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ognooDevShort" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ognooDevMonth" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getMessages">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMessagesResult" type="tns:Messages" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Messages">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Data_Saved" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data_Error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data_Deleted" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="login_OK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="login_InvalidPermission" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="login_InvalidPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="login_InvalidUser" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getGlobals">
+        <s:complexType />
+      </s:element>
+      <s:element name="getGlobalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGlobalsResult" type="tns:Globals" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Globals">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PoliceWebApp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStatusResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Status">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusNew" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusReturned" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusChecked" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusEnrolled" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rowActive" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rowInActive" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rowNonArchive" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rowArchive" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getManageSoapIn">
+    <wsdl:part name="parameters" element="tns:getManage" />
+  </wsdl:message>
+  <wsdl:message name="getManageSoapOut">
+    <wsdl:part name="parameters" element="tns:getManageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getForumSoapIn">
+    <wsdl:part name="parameters" element="tns:getForum" />
+  </wsdl:message>
+  <wsdl:message name="getForumSoapOut">
+    <wsdl:part name="parameters" element="tns:getForumResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReportSoapIn">
+    <wsdl:part name="parameters" element="tns:getReport" />
+  </wsdl:message>
+  <wsdl:message name="getReportSoapOut">
+    <wsdl:part name="parameters" element="tns:getReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPatrolSoapIn">
+    <wsdl:part name="parameters" element="tns:getPatrol" />
+  </wsdl:message>
+  <wsdl:message name="getPatrolSoapOut">
+    <wsdl:part name="parameters" element="tns:getPatrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="getASAPSoapIn">
+    <wsdl:part name="parameters" element="tns:getASAP" />
+  </wsdl:message>
+  <wsdl:message name="getASAPSoapOut">
+    <wsdl:part name="parameters" element="tns:getASAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="getComplaintSoapIn">
+    <wsdl:part name="parameters" element="tns:getComplaint" />
+  </wsdl:message>
+  <wsdl:message name="getComplaintSoapOut">
+    <wsdl:part name="parameters" element="tns:getComplaintResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCrimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getCrime" />
+  </wsdl:message>
+  <wsdl:message name="getCrimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getCrimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:getSearch" />
+  </wsdl:message>
+  <wsdl:message name="getSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:getSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHRSoapIn">
+    <wsdl:part name="parameters" element="tns:getHR" />
+  </wsdl:message>
+  <wsdl:message name="getHRSoapOut">
+    <wsdl:part name="parameters" element="tns:getHRResponse" />
+  </wsdl:message>
+  <wsdl:message name="getZTBSoapIn">
+    <wsdl:part name="parameters" element="tns:getZTB" />
+  </wsdl:message>
+  <wsdl:message name="getZTBSoapOut">
+    <wsdl:part name="parameters" element="tns:getZTBResponse" />
+  </wsdl:message>
+  <wsdl:message name="getZurchilSoapIn">
+    <wsdl:part name="parameters" element="tns:getZurchil" />
+  </wsdl:message>
+  <wsdl:message name="getZurchilSoapOut">
+    <wsdl:part name="parameters" element="tns:getZurchilResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSystemUserSoapIn">
+    <wsdl:part name="parameters" element="tns:getSystemUser" />
+  </wsdl:message>
+  <wsdl:message name="getSystemUserSoapOut">
+    <wsdl:part name="parameters" element="tns:getSystemUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPoliceWebAppSoapIn">
+    <wsdl:part name="parameters" element="tns:getPoliceWebApp" />
+  </wsdl:message>
+  <wsdl:message name="getPoliceWebAppSoapOut">
+    <wsdl:part name="parameters" element="tns:getPoliceWebAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActionSoapIn">
+    <wsdl:part name="parameters" element="tns:getAction" />
+  </wsdl:message>
+  <wsdl:message name="getActionSoapOut">
+    <wsdl:part name="parameters" element="tns:getActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:getRoles" />
+  </wsdl:message>
+  <wsdl:message name="getRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:getRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFormatsSoapIn">
+    <wsdl:part name="parameters" element="tns:getFormats" />
+  </wsdl:message>
+  <wsdl:message name="getFormatsSoapOut">
+    <wsdl:part name="parameters" element="tns:getFormatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:getMessages" />
+  </wsdl:message>
+  <wsdl:message name="getMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:getMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGlobalsSoapIn">
+    <wsdl:part name="parameters" element="tns:getGlobals" />
+  </wsdl:message>
+  <wsdl:message name="getGlobalsSoapOut">
+    <wsdl:part name="parameters" element="tns:getGlobalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:getStatus" />
+  </wsdl:message>
+  <wsdl:message name="getStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:getStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConstantSoap">
+    <wsdl:operation name="getManage">
+      <wsdl:input message="tns:getManageSoapIn" />
+      <wsdl:output message="tns:getManageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getForum">
+      <wsdl:input message="tns:getForumSoapIn" />
+      <wsdl:output message="tns:getForumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getReport">
+      <wsdl:input message="tns:getReportSoapIn" />
+      <wsdl:output message="tns:getReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatrol">
+      <wsdl:input message="tns:getPatrolSoapIn" />
+      <wsdl:output message="tns:getPatrolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getASAP">
+      <wsdl:input message="tns:getASAPSoapIn" />
+      <wsdl:output message="tns:getASAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getComplaint">
+      <wsdl:input message="tns:getComplaintSoapIn" />
+      <wsdl:output message="tns:getComplaintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCrime">
+      <wsdl:input message="tns:getCrimeSoapIn" />
+      <wsdl:output message="tns:getCrimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSearch">
+      <wsdl:input message="tns:getSearchSoapIn" />
+      <wsdl:output message="tns:getSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHR">
+      <wsdl:input message="tns:getHRSoapIn" />
+      <wsdl:output message="tns:getHRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getZTB">
+      <wsdl:input message="tns:getZTBSoapIn" />
+      <wsdl:output message="tns:getZTBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getZurchil">
+      <wsdl:input message="tns:getZurchilSoapIn" />
+      <wsdl:output message="tns:getZurchilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSystemUser">
+      <wsdl:input message="tns:getSystemUserSoapIn" />
+      <wsdl:output message="tns:getSystemUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPoliceWebApp">
+      <wsdl:input message="tns:getPoliceWebAppSoapIn" />
+      <wsdl:output message="tns:getPoliceWebAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAction">
+      <wsdl:input message="tns:getActionSoapIn" />
+      <wsdl:output message="tns:getActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoles">
+      <wsdl:input message="tns:getRolesSoapIn" />
+      <wsdl:output message="tns:getRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFormats">
+      <wsdl:input message="tns:getFormatsSoapIn" />
+      <wsdl:output message="tns:getFormatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMessages">
+      <wsdl:input message="tns:getMessagesSoapIn" />
+      <wsdl:output message="tns:getMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGlobals">
+      <wsdl:input message="tns:getGlobalsSoapIn" />
+      <wsdl:output message="tns:getGlobalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <wsdl:input message="tns:getStatusSoapIn" />
+      <wsdl:output message="tns:getStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConstantSoap" type="tns:ConstantSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getManage">
+      <soap:operation soapAction="http://police.gov/getManage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getForum">
+      <soap:operation soapAction="http://police.gov/getForum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReport">
+      <soap:operation soapAction="http://police.gov/getReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatrol">
+      <soap:operation soapAction="http://police.gov/getPatrol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getASAP">
+      <soap:operation soapAction="http://police.gov/getASAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComplaint">
+      <soap:operation soapAction="http://police.gov/getComplaint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCrime">
+      <soap:operation soapAction="http://police.gov/getCrime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSearch">
+      <soap:operation soapAction="http://police.gov/getSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHR">
+      <soap:operation soapAction="http://police.gov/getHR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZTB">
+      <soap:operation soapAction="http://police.gov/getZTB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZurchil">
+      <soap:operation soapAction="http://police.gov/getZurchil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSystemUser">
+      <soap:operation soapAction="http://police.gov/getSystemUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPoliceWebApp">
+      <soap:operation soapAction="http://police.gov/getPoliceWebApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAction">
+      <soap:operation soapAction="http://police.gov/getAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoles">
+      <soap:operation soapAction="http://police.gov/getRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFormats">
+      <soap:operation soapAction="http://police.gov/getFormats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessages">
+      <soap:operation soapAction="http://police.gov/getMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlobals">
+      <soap:operation soapAction="http://police.gov/getGlobals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap:operation soapAction="http://police.gov/getStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConstantSoap12" type="tns:ConstantSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getManage">
+      <soap12:operation soapAction="http://police.gov/getManage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getForum">
+      <soap12:operation soapAction="http://police.gov/getForum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReport">
+      <soap12:operation soapAction="http://police.gov/getReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatrol">
+      <soap12:operation soapAction="http://police.gov/getPatrol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getASAP">
+      <soap12:operation soapAction="http://police.gov/getASAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComplaint">
+      <soap12:operation soapAction="http://police.gov/getComplaint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCrime">
+      <soap12:operation soapAction="http://police.gov/getCrime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSearch">
+      <soap12:operation soapAction="http://police.gov/getSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHR">
+      <soap12:operation soapAction="http://police.gov/getHR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZTB">
+      <soap12:operation soapAction="http://police.gov/getZTB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZurchil">
+      <soap12:operation soapAction="http://police.gov/getZurchil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSystemUser">
+      <soap12:operation soapAction="http://police.gov/getSystemUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPoliceWebApp">
+      <soap12:operation soapAction="http://police.gov/getPoliceWebApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAction">
+      <soap12:operation soapAction="http://police.gov/getAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoles">
+      <soap12:operation soapAction="http://police.gov/getRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFormats">
+      <soap12:operation soapAction="http://police.gov/getFormats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessages">
+      <soap12:operation soapAction="http://police.gov/getMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlobals">
+      <soap12:operation soapAction="http://police.gov/getGlobals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap12:operation soapAction="http://police.gov/getStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Constant">
+    <wsdl:port name="ConstantSoap" binding="tns:ConstantSoap">
+      <soap:address location="http://localhost:8082/Constant.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConstantSoap12" binding="tns:ConstantSoap12">
+      <soap12:address location="http://localhost:8082/Constant.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
