@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">
     <div class="site-title">
-        <div class="container">
-            <h1><%=Resources.Resource.Package %>
- %></h1>
+        <div class="container" runat="server">
+            <h1 class="aligncenter"><%=Resources.Resource.Package %>					
+            </h1>
         </div>
     </div>
 </asp:Content>
@@ -55,18 +55,18 @@
         </div>
         <div class="column twelvecol">
             <div class="widget widget-slider sidebar-widget">
-                <div class="widget-title">
-                    <h4><%= Resources.Resource.PackageInformation %> (<%= Resources.Resource.PackageStatus %>:
+                <div class="widget-title" runat="server">
+                    <h4><%=Resources.Resource.Package %> (<%= Resources.Resource.PackageStatus %>:
                         <asp:Label runat="server" ID="lblPackageStatus"></asp:Label>)</h4>
                 </div>
                 <div class="site-form">
                     <div class="message">
                     </div>
-                    <table class="profile-fields order-form-table">
+                    <table class="profile-fields order-form-table" runat="server">
                         <tbody>
                             <tr>
-                                <th><%= Resources.Resource.CreatedUser %>></th>
-                                <th><%= Resources.Resource.PackageReciever %></th>
+                                <th><%= Resources.Resource.CreatedUser %></th>
+                                <th><%= Resources.Resource.OrderCustomer %></th>
                             </tr>
                             <tr>
                                 <td>
@@ -85,7 +85,7 @@
                                             }
                                         </script>
                                     </telerik:RadCodeBlock>
-                                    <telerik:RadComboBox ID="lstUserList" runat="server" Width="100%" Height="250px" EmptyMessage="Гараас утга бичиж хайна..." AllowCustomText="true"
+                                    <telerik:RadComboBox ID="lstUserList" runat="server" Width="100%" Height="250px" EmptyMessage="<%$ Resources:Resource, EnterValue %>" AllowCustomText="true"
                                         Filter="Contains" MarkFirstMatch="true" EnableLoadOnDemand="True" ShowMoreResultsBox="True"
                                         EnableVirtualScrolling="True" OnClientTextChange="onChangeTextRad" OnClientDropDownClosed="onChangeTextRad" OnClientSelectedIndexChanged="onChangeTextRad"
                                         OnItemsRequested="lstUserList_ItemsRequested" class="form-control" Skin="MetroTouch">
@@ -95,54 +95,55 @@
                                             <telerik:RadComboBoxItem />
                                         </Items>
                                     </telerik:RadComboBox>
-                                    <asp:RequiredFieldValidator ID="val_lstAddress" runat="server" ErrorMessage="Илгээмж явуулж байгаа хэрэглэгч"
+                                    <asp:RequiredFieldValidator ID="val_lstAddress" runat="server" ErrorMessage="<%$ Resources:Resource,  PackageUser%>"
                                         ControlToValidate="lstUserList">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <telerik:RadTextBox runat="server" ID="txtReciveOrderName" Width="100%" EmptyMessage="Order name"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtReciveOrderName" Width="100%" EmptyMessage="<%$ Resources:Resource, OrderName %>"></telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtReciveOrderName"
-                                        ErrorMessage="Захиалга хэний нэр дээр ирэх" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="<%$ Resources:Resource, OrderCustomer %>" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Монголд хүлээн авагчын нэр</th>
-                                <th>Захиалгын дугаар</th>
+                                <th><%= Resources.Resource.PackageReciever %></th>
+
+                                <th><%= Resources.Resource.OrderNo %></th>
                             </tr>
                             <tr>
                                 <td>
-                                    <telerik:RadTextBox runat="server" ID="txtReciveName" Width="100%" EmptyMessage="Эцэг/эх/-ийн нэр, өөрийн нэрийн хамт бичих"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtReciveName" Width="100%" EmptyMessage="<%$ Resources:Resource, FillFullName %>"></telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtReciveName"
-                                        ErrorMessage="Эцэг/эх/-ийн нэр" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="<%$ Resources:Resource, LastName %>" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td>
                                     <telerik:RadNumericTextBox ID="txtReciveOrderNumber" runat="server" MaxValue="99999999" MinValue="10000"
-                                        EmptyMessage="Захиалгын #order number" MaxLength="20" CssClass="RadTextBox"
+                                        EmptyMessage="<%$ Resources:Resource, EnterValue %>" MaxLength="20" CssClass="RadTextBox"
                                         Width="100%">
                                         <NumberFormat DecimalDigits="0" GroupSeparator="" />
                                     </telerik:RadNumericTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtReciveOrderNumber"
-                                        ErrorMessage="Захиалгын дугаар" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="<%$ Resources:Resource, OrderNo %>" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Монголд хүлээн авагчын хаяг</th>
-                                <th>Тракин дугаар</th>
+                                <th><%= Resources.Resource.AddressMongolia %></th>
+                                <th><%= Resources.Resource.OrderTrackingNo %></th>
                             </tr>
                             <tr>
                                 <td>
-                                    <telerik:RadTextBox runat="server" ID="txtReciveAddress" Width="100%" EmptyMessage="Жишээ нь: Улаанбаатар хот, Чингэлтэй дүүрэг 1-р хороо, 1-р байр 1 тоот"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtReciveAddress" Width="100%" EmptyMessage="<%$ Resources:Resource, SampleMongolianAddress %>"></telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtReciveAddress"
-                                        ErrorMessage="Нэр" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <telerik:RadTextBox runat="server" ID="txtReciveOrderTrack" Width="100%" EmptyMessage="Захиалга хийсэн газрын #tracking number"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtReciveOrderTrack" Width="100%" EmptyMessage="<%$ Resources:Resource, PostalTrackingNumber %>"></telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtReciveOrderTrack"
-                                        ErrorMessage="Тракин дугаар" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Монголд хүлээн авагчын утас</th>
-                                <th>Сайтын хаяг (URL)</th>
+                                <th><%= Resources.Resource.PhoneMongolia %></th>
+                                <th><%= Resources.Resource.WebSite %> (URL)</th>
                             </tr>
                             <tr>
                                 <td>
@@ -152,22 +153,22 @@
                                         <NumberFormat DecimalDigits="0" GroupSeparator="" />
                                     </telerik:RadNumericTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtRecivePhone"
-                                        ErrorMessage="Утасны дугаар (Монгол)" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <telerik:RadTextBox runat="server" ID="txtReciveOrderSite" Width="100%" EmptyMessage="Захиалга хийсэн цахим хуудас жишээ нь: www.amazon.co.jp"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtReciveOrderSite" Width="100%" EmptyMessage="<%$ Resources:Resource, SampleOrderWebSite %>"></telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtReciveOrderSite"
-                                        ErrorMessage="Сайтын хаяг (URL)" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <th colspan="2">Илгээмжийн ерөнхий тайлбар</th>
+                                <th colspan="2"><%= Resources.Resource.PackageDescription %></th>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <telerik:RadTextBox runat="server" ID="txtDescription" Width="100%" EmptyMessage="Ажилтан бөглөх(Гаалийн хуудсан дээр бичигдэх тайлбар)"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtDescription" Width="100%" EmptyMessage="<%$ Resources:Resource, PackageDescriptionWorker %>"></telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="val_description" runat="server" ControlToValidate="txtDescription"
-                                        ErrorMessage="Илгээмжийн ерөнхий тайлбар" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                         </tbody>
@@ -177,83 +178,83 @@
         </div>
         <div class="column twelvecol">
             <div class="widget widget-slider sidebar-widget">
-                <div class="widget-title">
-                    <h4>Барааны мэдээлэл оруулах</h4>
+                <div class="widget-title" runat="server">
+                    <h4><%= Resources.Resource.EnterItems %></h4>
                 </div>
                 <div class="site-form">
-                    <table class="item-form">
+                    <table class="item-form" runat="server">
                         <tbody>
                             <tr>
-                                <th>Барааны нэр</th>
-                                <th>Бренд нэр</th>
-                                <th>Тоо ширхэг</th>
-                                <th>Нэгж үнэ (¥)</th>
+                                <th><%= Resources.Resource.ItemName %></th>
+                                <th><%= Resources.Resource.ItemBrand %></th>
+                                <th><%= Resources.Resource.ItemCount %></th>
+                                <th><%= Resources.Resource.ItemUnitPrice %></th>
                                 <th></th>
                             </tr>
                             <tr>
                                 <td>
-                                    <telerik:RadTextBox runat="server" ID="txtItemName" Width="100%" placeholder="жишээ нь: iphone5, .... гэх мэт"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtItemName" Width="100%" placeholder="iphone5, .... "></telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtItemName"
-                                        ErrorMessage="Барааны нэр" CssClass="Validator" ValidationGroup="listItems">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" CssClass="Validator" ValidationGroup="listItems">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <telerik:RadTextBox runat="server" ID="txtItemBrand" Width="100%" placeholder="жишээ нь: apple, nike, sony... гэх мэт"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtItemBrand" Width="100%" placeholder="apple, nike, sony... "></telerik:RadTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtItemBrand"
-                                        ErrorMessage="Бренд нэр" CssClass="Validator" ValidationGroup="listItems">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" CssClass="Validator" ValidationGroup="listItems">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td>
                                     <telerik:RadNumericTextBox ID="txtItemCount" runat="server" MaxValue="9999" MinValue="0"
-                                        placeholder="тоогоор" MaxLength="4" CssClass="RadTextBox"
+                                        placeholder="" MaxLength="4" CssClass="RadTextBox"
                                         Width="100%">
                                         <NumberFormat DecimalDigits="0" GroupSeparator="" />
                                     </telerik:RadNumericTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtItemCount"
-                                        ErrorMessage="Тоо ширхэг" ValidationGroup="listItems" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" ValidationGroup="listItems" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td>
                                     <telerik:RadNumericTextBox ID="txtItemRate" runat="server" MaxValue="99999999" MinValue="0"
-                                        placeholder="тоогоор" MaxLength="9" CssClass="RadTextBox"
+                                        placeholder="" MaxLength="9" CssClass="RadTextBox"
                                         Width="100%">
                                         <NumberFormat DecimalDigits="2" GroupSeparator="" />
                                     </telerik:RadNumericTextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtItemRate"
-                                        ErrorMessage="Нэгж үнэ ¥" ValidationGroup="listItems" CssClass="Validator">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="" ValidationGroup="listItems" CssClass="Validator">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <asp:Button ID="btnAddItem" runat="server" Text="Нэмэх" type="button" class="btn btn-primary" OnClick="btnUploadPic_Click" ValidationGroup="listItems" Style="float: left; margin-right: 10px; margin-top: -17px" />
+                                    <asp:Button ID="btnAddItem" runat="server" Text="<%$ Resources:Resource, Add %>" type="button" class="btn btn-primary" OnClick="btnUploadPic_Click" ValidationGroup="listItems" Style="float: left; margin-right: 10px; margin-top: -17px" />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <telerik:RadGrid ID="grdListItems" AutoGenerateColumns="False" AllowPaging="false" runat="server" GridLines="None" Skin="MetroTouch" ShowFooter="True" OnItemCommand="grdList_ItemCommand" AllowAutomaticDeletes="true">
-                        <MasterTableView CommandItemDisplay="None" Height="100%" NoMasterRecordsText="Жагсаалт хоосон." ShowHeadersWhenNoRecords="true" HierarchyDefaultExpanded="true" TableLayout="Auto" AutoGenerateColumns="false">
+                        <MasterTableView CommandItemDisplay="None" Height="100%" NoMasterRecordsText="<%$ Resources:Resource, EmptyList %>" ShowHeadersWhenNoRecords="true" HierarchyDefaultExpanded="true" TableLayout="Auto" AutoGenerateColumns="false">
                             <Columns>
-                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="Барааны нэр" DataField="NAME" UniqueName="NAME" Aggregate="Count" FooterText="Нийт: ">
+                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemName %>" DataField="NAME" UniqueName="NAME" Aggregate="Count" FooterText="Нийт: ">
                                     <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" />
                                     <ItemStyle Font-Names="Tahoma" Font-Size="12px" Height="30px" />
                                     <FooterStyle HorizontalAlign="Left" Width="130px" Font-Size="11px" ForeColor="Black" Font-Bold="true" />
                                 </telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="Бренд нэр" DataField="BRAND"
+                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemBrand %>" DataField="BRAND"
                                     UniqueName="BRAND">
                                     <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" />
                                     <ItemStyle Font-Names="Tahoma" Font-Size="12px" />
                                 </telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="Тоо ширхэг" DataField="ITEMCOUNT"
+                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemCount %>" DataField="ITEMCOUNT"
                                     UniqueName="ITEMCOUNT">
                                     <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Width="90px" Font-Bold="true" />
                                     <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                                 </telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="Нэгж үнэ ¥" DataField="ITEMRATE"
+                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemUnitPrice %>" DataField="ITEMRATE"
                                     UniqueName="ITEMRATE">
                                     <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Width="100px" Font-Bold="true" />
                                     <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                                 </telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="Нийт үнэ ¥" DataField="ITEMRATESUM"
+                                <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemTotalPrice %>" DataField="ITEMRATESUM"
                                     UniqueName="ITEMRATESUM">
                                     <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Width="100px" Font-Bold="true" />
                                     <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                                 </telerik:GridBoundColumn>
-                                <telerik:GridButtonColumn Text="Хасах" UniqueName="DeleteColumn" HeaderText="..." CommandName="Delete">
+                                <telerik:GridButtonColumn Text="<%$ Resources:Resource, Delete %>" UniqueName="DeleteColumn" HeaderText="..." CommandName="Delete">
                                     <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Width="80px" />
                                     <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" ForeColor="#d43f3a" Font-Bold="true" />
                                 </telerik:GridButtonColumn>
@@ -276,10 +277,10 @@
         <div class="column twelvecol">
             <div class="column sixcol"></div>
             <div class="column sixcol last">
-                <table class="profile-fields">
+                <table class="profile-fields" runat="server">
                     <tbody>
                         <tr>
-                            <th>Sales tax (¥)</th>
+                            <th><%= Resources.Resource.SalesTax %></th>
                             <td>
                                 <div class="field-wrap">
                                     <telerik:RadNumericTextBox ID="txtPackageTax" runat="server" MaxValue="99999999" MinValue="0"
@@ -293,7 +294,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Shipping (¥)</th>
+                            <th><%= Resources.Resource.Shipping %></th>
                             <td>
                                 <div class="field-wrap">
                                     <telerik:RadNumericTextBox ID="txtPackageShipping" runat="server" MaxValue="99999999" MinValue="0"
@@ -307,7 +308,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Discount (¥)</th>
+                            <th><%= Resources.Resource.Discount %></th>
                             <td>
                                 <div class="field-wrap">
                                     <telerik:RadNumericTextBox ID="txtPackageDiscount" runat="server" MaxValue="99999999" MinValue="0"
@@ -321,7 +322,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Захиалгын нийт үнэ</th>
+                            <th><%= Resources.Resource.OrderTotalAmount %></th>
                             <td>
                                 <div class="field-wrap">
                                     <telerik:RadTextBox runat="server" ID="txtPackageSumRate" Width="100%" placeholder="" Enabled="false"></telerik:RadTextBox>
@@ -334,8 +335,8 @@
         </div>
         <div class="column twelvecol">
             <div class="textright order-form-buttons">
-                <asp:Button ID="btnSave" runat="server" Text="Илгээмж баталгаажуулах" class="element-button primary" OnClick="btnSave_Click" />
-                <asp:Button ID="btnCancel" runat="server" Text="Илгээмжийг цуцлах" class="element-button" CausesValidation="false" OnClick="btnCancel_Click" />
+                <asp:Button ID="btnSave" runat="server" Text="<%$ Resources:Resource, PackageConfirmation %>" class="element-button primary" OnClick="btnSave_Click" />
+                <asp:Button ID="btnCancel" runat="server" Text="<%$ Resources:Resource, PackageCancellation %>" class="element-button" CausesValidation="false" OnClick="btnCancel_Click" />
             </div>
         </div>
     </div>

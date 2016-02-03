@@ -9,11 +9,11 @@ using Telerik.Web.UI;
 
 namespace Daiei
 {
-    public partial class Orders : System.Web.UI.Page
+    public partial class Orders : BasePage
     {
         public static string FormName
         {
-            get { return "../Pages/Packages.aspx"; }
+            get { return "Packages.aspx"; }
         }
         protected override void OnLoad(EventArgs e)
         {

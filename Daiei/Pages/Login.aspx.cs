@@ -9,7 +9,7 @@ using Telerik.Web.UI;
 
 namespace Daiei.Pages
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login : BasePage
     {
         protected override void OnLoad(EventArgs e)
         {

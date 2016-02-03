@@ -11,7 +11,7 @@ using Telerik.Web.UI;
 
 namespace Daiei
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class Register : BasePage
     {
         protected override void OnInit(EventArgs e)
         {

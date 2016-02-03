@@ -18,7 +18,7 @@
                         <p class="aligncenter">
                             <asp:TextBox ID="txtTrackingNumber" type="text" CssClass="check" placeholder="#tracking number" runat="server"></asp:TextBox>
                             &nbsp;
-                            <asp:Button ID="btnLogin" CssClass="element-button" Text="Төлөв шалгах" runat="server" OnClick="btnLogin_Click" />
+                            <asp:Button ID="btnLogin" CssClass="element-button" Text="<%$ Resources:Resource, PackageCheckStatus %>" runat="server" OnClick="btnLogin_Click" />
                             <p>
                                 &nbsp;<br />
                                 &nbsp;<br />

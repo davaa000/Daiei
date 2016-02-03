@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Daiei
 {
-    public partial class Calculate : System.Web.UI.Page
+    public partial class Calculate : BasePage
     {
         protected void btnCalculate_Click(object sender, EventArgs e)
         {

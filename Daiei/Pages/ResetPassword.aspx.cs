@@ -8,7 +8,7 @@ using Telerik.Web.UI;
 
 namespace Daiei.Pages
 {
-    public partial class ResetPassword : System.Web.UI.Page
+    public partial class ResetPassword : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

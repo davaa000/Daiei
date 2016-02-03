@@ -19,14 +19,14 @@
         </div>
         <div class="profile-menu sidebar-widget">
             <ul>
+                <li class="clearfix">
+                    <a href="Home.aspx" runat="server"><%= Resources.Resource.UserInformation %></a>
+                </li>
                 <li class="current clearfix">
-                    <a href="Home.aspx">Хувийн мэдээлэл</a>
+                    <a href="ChangePassword.aspx" runat="server"><%= Resources.Resource.ChangePassword %></a>
                 </li>
                 <li class="clearfix">
-                    <a href="ChangePassword.aspx">Нууц үг өөрчлөх</a>
-                </li>
-                <li class="clearfix">
-                    <a href="ChangeProfile.aspx">Хувийн мэдээлэл өөрчлөх</a>
+                    <a href="ChangeProfile.aspx" runat="server"><%= Resources.Resource.ChangeUserInformation %></a>
                 </li>
             </ul>
         </div>
@@ -41,54 +41,54 @@
             <table class="profile-fields">
                 <tbody>
                     <tr>
-                        <th>Хэрэглэгчийн код (tabiID)</th>
+                        <th><%= Resources.Resource.UserID %>(tabiID)</th>
                         <td>
                             <asp:Label runat="server" ID="lblUserID2"></asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2"> <font color="red"> Та энэ кодыг шуудангийн маягтанд заавал бичнэ үү </font>
+                        <td colspan="2"> <font color="red"> <%= Resources.Resource.TabiIDAlert %> </font>
                         </td>
                     </tr>
                     <tr>
-                        <th>Нэр</th>
+                        <th><%= Resources.Resource.UserName %></th>
                         <td>
-                            <asp:Label runat="server" ID="lblFirstName">Энхээ</asp:Label>
-                            <asp:Label runat="server" ID="lblLastName">Отгонбат</asp:Label>
+                            <asp:Label runat="server" ID="lblFirstName">""</asp:Label>
+                            <asp:Label runat="server" ID="lblLastName">""</asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <th>Имэйл</th>
+                        <th><%= Resources.Resource.Email %></th>
                         <td>
                             <asp:Label runat="server" ID="lblEmail">e.oogii@yahoo.com</asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <th>Утас (Монгол)</th>
+                        <th><%= Resources.Resource.PhoneMongolia %></th>
                         <td>
                             <asp:Label runat="server" ID="lblMNPhone">99654564</asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <th>Утас (Япон)</th>
+                        <th><%= Resources.Resource.PhoneJapan %></th>
                         <td>
                             <asp:Label runat="server" ID="lblJPPhone">-</asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <th>Хаяг (Монгол)</th>
+                        <th><%= Resources.Resource.AddressMongolia %></th>
                         <td>
                             <asp:Label runat="server" ID="lblMNAddress">БЗД 15-р хороо 4-151</asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <th>Хаяг (Япон)</th>
+                        <th><%= Resources.Resource.AddressJapan %></th>
                         <td>
                             <asp:Label runat="server" ID="lblJPAddress">-</asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <th>Нийт илгээмж</th>
+                        <th><%= Resources.Resource.PackageTotal %>/th>
                         <td>
                             <asp:Label runat="server" ID="lblOrderCount">17</asp:Label>
                         </td>
@@ -99,8 +99,8 @@
     </div>
     <aside class="column fourcol last">
         <div class="widget widget-slider sidebar-widget">
-            <div class="widget-title">
-                <h4>Сүүлийн нэвтрэлт</h4>
+            <div class="widget-title" runat="server">
+                <h4><%= Resources.Resource.LastLogin %></h4>
             </div>
             <ul>
                 <li>
@@ -108,8 +108,8 @@
             </ul>
         </div>
         <div class="widget widget-slider sidebar-widget">
-            <div class="widget-title">
-                <h4>Сүүлийн 5 илгээмж</h4>
+            <div class="widget-title" runat="server">
+                <h4><%= Resources.Resource.Last5Package %>/h4>
             </div>
             <ul>
                 <asp:Repeater ID="listPackages" runat="server">

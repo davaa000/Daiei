@@ -13,33 +13,9 @@ namespace Daiei
     {
         private const int ItemsPerRequest = 300;
 
-        protected override void OnLoad(EventArgs e)
-        {
-            if (!Page.IsPostBack)
-            {
-                if (Database.UserID != null)
-                {
-                    //
-                }
-                else
-                {
-                    try
-                    {
-                        RadAjaxManager manager = RadAjaxManager.GetCurrent(Page);
-                        manager.ResponseScripts.Add(Functions.BootstrapMessageBoxScriptBuilder("danger", "Та системд нэвтрэх эсвэл бүртгүүлэх шаардлагатай.", "../Pages/Register.aspx"));
-                    }
-                    catch (NullReferenceException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-            }
-            base.OnLoad(e);
-
-        }
         public static string FormName
         {
-            get { return "../Pages/AddPackage.aspx"; }
+            get { return "AddPackage.aspx"; }
         }
 
         public DataTable sessionTable

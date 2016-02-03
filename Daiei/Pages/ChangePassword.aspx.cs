@@ -8,7 +8,7 @@ using Telerik.Web.UI;
 
 namespace Daiei
 {
-    public partial class ChangePassword : System.Web.UI.Page
+    public partial class ChangePassword : BasePage
     {
         protected override void OnInit(EventArgs e)
         {

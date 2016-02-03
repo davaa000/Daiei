@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">
     <div class="site-title">
-        <div class="container">
-            <h1>Хэрэглэгчийн нууц үг солих
+        <div class="container" runat="server">
+            <h1><%= Resources.Resource.UserInformation  %>
                 <asp:Label runat="server" ID="lblUserID">#00000001</asp:Label></h1>
         </div>
     </div>
@@ -11,34 +11,34 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div class="column fivecol">
         <div class="element-title indented">
-            <h1>Нууц үг өөрчлөх</h1>
+            <h1><%= Resources.Resource.ResetPassword  %></h1>
         </div>
         <div class="site-form">
-            <table class="profile-fields">
+            <table class="profile-fields" runat="server">
                 <tbody>
                     <tr>
-                        <th>Шинэ нууц үг</th>
+                        <th><%= Resources.Resource.NewPassword  %></th>
                         <td>
                             <div class="field-wrap">
-                                <telerik:RadTextBox runat="server" ID="txtPass22" Width="100%" placeholder="Шинэ нууц үг" TextMode="Password"></telerik:RadTextBox>
+                                <telerik:RadTextBox runat="server" ID="txtPass22" Width="100%" placeholder="<%$ Resources:Resource, NewPassword %>" TextMode="Password"></telerik:RadTextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPass22"
-                                    ErrorMessage="Шинэ нууц үг" CssClass="Validator" ValidationGroup="ChangePass">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="<%$ Resources:Resource, NewPassword %>" CssClass="Validator" ValidationGroup="ChangePass">*</asp:RequiredFieldValidator>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <th>Нууц үг давтах</th>
+                        <th><%= Resources.Resource.ConfirmationPassword  %></th>
                         <td>
                             <div class="field-wrap">
-                                <telerik:RadTextBox runat="server" ID="txtPass33" Width="100%" placeholder="Нууц үг давтах" TextMode="Password"></telerik:RadTextBox>
+                                <telerik:RadTextBox runat="server" ID="txtPass33" Width="100%" placeholder="<%$ Resources:Resource,ConfirmationPassword %>" TextMode="Password"></telerik:RadTextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPass33"
-                                    ErrorMessage="Шинэ нууц үг дахин оруулах" CssClass="Validator" ValidationGroup="ChangePass">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="<%$ Resources:Resource, ConfirmationPassword %>" CssClass="Validator" ValidationGroup="ChangePass">*</asp:RequiredFieldValidator>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <asp:Button ID="btnSave" CssClass="element-button primary" Text="Хадгалах" runat="server" ValidationGroup="ChangePass" OnClick="btnSave_Click"/>
+            <asp:Button ID="btnSave" CssClass="element-button primary" Text="<%$ Resources:Resource, Save %>" runat="server" ValidationGroup="ChangePass" OnClick="btnSave_Click"/>
         </div>
     </div>
     

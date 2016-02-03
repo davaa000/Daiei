@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Daiei
 {
-    public partial class Policy : System.Web.UI.Page
+    public partial class Policy : BasePage
     {
 
     }

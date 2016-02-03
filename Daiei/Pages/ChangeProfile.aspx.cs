@@ -9,7 +9,7 @@ using Telerik.Web.UI;
 
 namespace Daiei
 {
-    public partial class ChangeProfile : System.Web.UI.Page
+    public partial class ChangeProfile : BasePage
     {
         protected override void OnInit(EventArgs e)
         {

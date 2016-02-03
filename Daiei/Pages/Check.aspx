@@ -2,45 +2,45 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">
     <div class="site-title">
-        <div class="container">
-            <h1>Төлөв шалгах</h1>
+        <div class="container" runat="server">
+            <h1><%= Resources.Resource.PackageCheckStatus %></h1>
         </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
 
     <div class="column twelvecol">
-        <div class="element-title indented">
-            <h1>Төлөв шалгах</h1>
+        <div class="element-title indented" runat="server">
+            <h1><%= Resources.Resource.PackageCheckStatus %></h1>
         </div>
         <div class="site-form">
             <asp:Panel ID="pnlCheckForm" runat="server">
                 <table class="item-form" style="margin-bottom: 40px;">
                     <tbody>
                         <tr>
-                            <th>Захиалгын дугаар</th>
-                            <th>Тракин дугаар</th>
-                            <th>Илгээмжийн дугаар</th>
+                            <th><%= Resources.Resource.OrderNo %></th>
+                            <th><%= Resources.Resource.OrderTrackingNo %></th>
+                            <th><%= Resources.Resource.PackageTabiNo %></th>
                             <th></th>
                         </tr>
                         <tr>
                             <td>
                                 <div class="field-wrap">
-                                    <telerik:RadTextBox runat="server" ID="txtOrderNumber" Width="100%" placeholder="#order number"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtOrderNumber" Width="100%" placeholder="<%$ Resources:Resource, OrderNo %>"></telerik:RadTextBox>
                                 </div>
                             </td>
                             <td>
                                 <div class="field-wrap">
-                                    <telerik:RadTextBox runat="server" ID="txtTrackingNumber" Width="100%" placeholder="#tracking number"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtTrackingNumber" Width="100%" placeholder="<%$ Resources:Resource,OrderTrackingNo %>"></telerik:RadTextBox>
                                 </div>
                             </td>
                             <td>
                                 <div class="field-wrap">
-                                    <telerik:RadTextBox runat="server" ID="txtPackageNumber" Width="100%" placeholder="Таби.мн илгээмжийн дугаар"></telerik:RadTextBox>
+                                    <telerik:RadTextBox runat="server" ID="txtPackageNumber" Width="100%" placeholder="<%$ Resources:Resource, PackageTabiNo %>"></telerik:RadTextBox>
                                 </div>
                             </td>
                             <td>
-                                <asp:Button ID="btnCheckStatus" runat="server" Text="Төлөв шалгах" OnClick="btnCheckStatus_Click" CausesValidation="false" type="button" class="element-button" />
+                                <asp:Button ID="btnCheckStatus" runat="server" Text="<%$ Resources:Resource, PackageCheckStatus %>" OnClick="btnCheckStatus_Click" CausesValidation="false" type="button" class="element-button" />
                             </td>
                         </tr>
                     </tbody>
@@ -51,14 +51,14 @@
         <asp:Panel ID="pnlPackageStatus" runat="server" Visible="false">
             <div class="widget widget-slider sidebar-widget"  style="margin-bottom: 40px;">
                 <div class="widget-title">
-                    <h4>Илгээмжийн төлөв</h4>
+                    <h4><%= Resources.Resource.PackageStatus %></h4>
                 </div>
                 <table class="profile-table">
                     <thead>
                         <tr>
-                            <th>Огноо</th>
-                            <th>Төлөв</th>
-                            <th>Тайлбар</th>
+                            <th><%= Resources.Resource.Date %></th>
+                            <th><%= Resources.Resource.PackageStatus %></th>
+                            <th><%= Resources.Resource.Description %></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,37 +79,37 @@
         <asp:Panel ID="pnlPackageInfo" runat="server" Visible="false">
             <div class="widget widget-slider sidebar-widget">
                 <div class="widget-title">
-                    <h4>Илгээмжийн мэдээлэл</h4>
+                    <h4><%= Resources.Resource.PackageInformation %></h4>
                 </div>
                 <div class="column sixcol">
                     <table class="package-info">
                         <tbody>
                             <tr>
-                                <th>Бүртгэсэн хэрэглэгч</th>
+                                <th><%= Resources.Resource.CreatedUser %></th>
                                 <td>
                                     <asp:Label runat="server" ID="lblCreatedUser"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>ТаБи.мн илгээмжийн дугаар</th>
+                                <th><%= Resources.Resource.PackageTabiNo %></th>
                                 <td>
                                     <asp:Label runat="server" ID="lblTabuOrderNumber"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Хүлээн авагчийн нэр</th>
+                                <th><%= Resources.Resource.PackageReciever %></th>
                                 <td>
                                     <asp:Label runat="server" ID="lblReciveHuman"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Хүлээн авагчийн хаяг</th>
+                                <th><%= Resources.Resource.RecieverAddress %></th>
                                 <td>
                                     <asp:Label runat="server" ID="lblReviceAddress"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Хүлээн авагчийн утас</th>
+                                <th><%= Resources.Resource.RecieverPhone %></th>
                                 <td>
                                     <asp:Label runat="server" ID="lblRevicePhone"></asp:Label>
                                 </td>
@@ -118,22 +118,22 @@
                     </table>
                 </div>
                 <div class="column sixcol last">
-                    <table class="package-info">
+                    <table class="package-info" runat="server">
                         <tbody>
                             <tr>
-                                <th>Захиалга ирэх нэр</th>
+                                <th><%= Resources.Resource.OrderCustomer %></th>
                                 <td>
                                     <asp:Label runat="server" ID="lblOrderName"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Захиалгын дугаар</th>
+                                <th><%= Resources.Resource.OrderNo %></th>
                                 <td>
                                     <asp:Label runat="server" ID="lblOrderNumber"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Тракин дугаар</th>
+                                <th><%= Resources.Resource.OrderTrackingNo %></th>
                                 <td>
                                     <asp:Label runat="server" ID="lblTrackingNumber"></asp:Label>
                                 </td>
@@ -147,30 +147,30 @@
                         </tbody>
                     </table>
                 </div>
-                <telerik:RadGrid ID="grdListItems" AutoGenerateColumns="False" AllowPaging="false" runat="server" GridLines="None" Skin="MetroTouch" ShowFooter="True">
-                    <MasterTableView CommandItemDisplay="None" Height="100%" NoMasterRecordsText="Жагсаалт хоосон." ShowHeadersWhenNoRecords="true" HierarchyDefaultExpanded="true" TableLayout="Auto" AutoGenerateColumns="false">
+                <telerik:RadGrid ID="grdListItems" AutoGenerateColumns="False" AllowPaging="false" runat="server" GridLines="None" Skin="MetroTouch" ShowFooter="True" Width="901px">
+                    <MasterTableView CommandItemDisplay="None" Height="100%" NoMasterRecordsText="<%$ Resources:Resource, EmptyList %>" ShowHeadersWhenNoRecords="true" HierarchyDefaultExpanded="true" TableLayout="Auto" AutoGenerateColumns="false">
                         <Columns>
-                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="Барааны нэр" DataField="NAME" UniqueName="NAME" Aggregate="Count" FooterText="Нийт бараа: ">
+                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemName %>" DataField="NAME" UniqueName="NAME" Aggregate="Count" FooterText="<%$ Resources:Resource, TotalItem %>">
                                 <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" />
                                 <ItemStyle Font-Names="Tahoma" Font-Size="12px" Height="30px" />
                                 <FooterStyle HorizontalAlign="Left" Font-Size="11px" ForeColor="Black" Font-Bold="true" />
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="Бренд нэр" DataField="BRAND"
+                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemBrand %>" DataField="BRAND"
                                 UniqueName="BRAND">
                                 <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" />
                                 <ItemStyle Font-Names="Tahoma" Font-Size="12px" />
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="Тоо ширхэг" DataField="ITEMCOUNT"
+                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemCount %>" DataField="ITEMCOUNT"
                                 UniqueName="ITEMCOUNT">
                                 <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Width="90px" Font-Bold="true" />
                                 <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="Нэгж үнэ ¥" DataField="ITEMRATE"
+                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemUnitPrice %>" DataField="ITEMRATE"
                                 UniqueName="ITEMRATE">
                                 <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Width="100px" Font-Bold="true" />
                                 <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="Нийт үнэ ¥" DataField="ITEMRATESUM"
+                            <telerik:GridBoundColumn ReadOnly="true" HeaderText="<%$ Resources:Resource, ItemTotalPrice %>" DataField="ITEMRATESUM"
                                 UniqueName="ITEMRATESUM">
                                 <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Width="100px" Font-Bold="true" />
                                 <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
@@ -189,19 +189,19 @@
                         <table class="package-info">
                             <tbody>
                                 <tr>
-                                    <th>Илгээмжийн жин</th>
+                                    <th><%= Resources.Resource.PackageWeight %></th>
                                     <td>
                                         <asp:Label runat="server" ID="lblJin"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Илгээмжийн эзэлхүүн</th>
+                                    <th><%= Resources.Resource.PackageVolume %></th>
                                     <td>
                                         <asp:Label runat="server" ID="lblEzelhuun"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Илгээмжийн төлбөр</th>
+                                    <th><%= Resources.Resource.PackagePayment %></th>
                                     <td>
                                         <asp:Label runat="server" ID="lblFee"></asp:Label>
                                     </td>
@@ -213,25 +213,25 @@
                         <table class="package-info">
                             <tbody>
                                 <tr>
-                                    <th>Sales tax</th>
+                                    <th><%= Resources.Resource.SalesTax %></th>
                                     <td>
                                         <asp:Label runat="server" ID="lblSale">0.00</asp:Label>¥
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Shipping</th>
+                                    <th><%= Resources.Resource.Shipping %></th>
                                     <td>
                                         <asp:Label runat="server" ID="lblShiping">0.00</asp:Label>¥
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Discount</th>
+                                    <th><%= Resources.Resource.Discount %></th>
                                     <td>
                                         <asp:Label runat="server" ID="lblDiscount">0.00</asp:Label>¥
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Захиалгын нийт үнэ</th>
+                                    <th><%= Resources.Resource.PackageTotal %></th>
                                     <td>
                                         <asp:Label runat="server" ID="lblSumRate">400</asp:Label>¥
                                     </td>
@@ -240,7 +240,7 @@
                         </table>
                     </div>
                 </div>
-                <asp:Button ID="btnEditPackage" runat="server" Text="Илгээмжийн мэдээлэл засварлах" OnClick="btnEditPackage_Click" type="button" class="element-button" Enabled="false" CausesValidation="false" />
+                <asp:Button ID="btnEditPackage" runat="server" Text="<%$ Resources:Resource, PackageConfirmation %>" OnClick="btnEditPackage_Click" type="button" class="element-button" Enabled="false" CausesValidation="false" />
             </div>
         </asp:Panel>
 

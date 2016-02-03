@@ -2,59 +2,59 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">
     <div class="site-title">
-        <div class="container">
-            <h1>Бүртгэгдсэн илгээмж</h1>
+        <div class="container" runat="server">
+            <h1><%= Resources.Resource.PackageList %></h1>
         </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div class="column twelvecol">
         <div class="element-title indented">
-            <h1>Бүртгэгдсэн илгээмжүүд</h1>
+            <h1><%= Resources.Resource.PackageList %></h1>
         </div>
         <telerik:RadGrid ID="grdPackages" runat="server" PageSize="20" AllowSorting="True"
             AllowPaging="true" ShowGroupPanel="false" AutoGenerateColumns="False" CellSpacing="0" GridLines="None"
             ShowFooter="True" AllowFilteringByColumn="true" Skin="MetroTouch"
             OnItemCommand="grdPackages_ItemCommand">
-            <PagerStyle FirstPageToolTip="Эхний хуудас руу үсрэх" LastPageToolTip="Сүүлийн хуудас руу үсрэх"
-                NextPagesToolTip="Дараагийн хуудас руу үсрэх" NextPageToolTip="Дараагийн хуудас руу үсрэх"
-                PagerTextFormat="Change page: {4} &nbsp; <strong>Нийт: {5}</strong> хуудас: <strong>{0}</strong>/<strong>{1}</strong>, <strong>{2}</strong> ээс <strong>{3}</strong>. "
+            <PagerStyle FirstPageToolTip="<%$ Resources:Resource, FirstPage %>" LastPageToolTip="<%$ Resources:Resource, LastPage %>"
+                NextPagesToolTip="<%$ Resources:Resource, NextPage %>" NextPageToolTip="<%$ Resources:Resource, NextPage %>"
+                PagerTextFormat="<%$ Resources:Resource, ChangePage %>: {4} &nbsp; <strong><%$ Resources:Resource, Page %>: {5}</strong> <%$ Resources:Resource, Page %>: <strong>{0}</strong>/<strong>{1}</strong>, <strong>{2}</strong> - <strong>{3}</strong>. "
                 PageSizeLabelText="Хуудсанд:" Mode="NextPrev" />
-            <MasterTableView ClientDataKeyNames="ID" NoMasterRecordsText="Жагсаалт хоосон."
+            <MasterTableView ClientDataKeyNames="ID" NoMasterRecordsText="<%$ Resources:Resource, EmptyList %>"
                 CommandItemDisplay="None" Height="100%" HierarchyDefaultExpanded="true" ShowHeadersWhenNoRecords="true" TableLayout="Auto" AutoGenerateColumns="false">
                 <Columns>
-                    <telerik:GridBoundColumn DataField="MBno" HeaderText="Илгээмжийн #" ShowFilterIcon="false"
-                        CurrentFilterFunction="Contains" FilterControlWidth="95%" AutoPostBackOnFilter="true" Aggregate="Count" FooterText="Нийт: ">
+                    <telerik:GridBoundColumn DataField="MBno" HeaderText="<%$ Resources:Resource, PackageTabiNo %>" ShowFilterIcon="false"
+                        CurrentFilterFunction="Contains" FilterControlWidth="95%" AutoPostBackOnFilter="true" Aggregate="Count" FooterText="<%$ Resources:Resource, Total %>">
                         <FooterStyle HorizontalAlign="Left" Width="120px" Font-Size="12px" Font-Bold="true" ForeColor="Black" />
                         <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" ForeColor="Black" />
                         <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="CreatedDate" HeaderText="Огноо" ShowFilterIcon="false"
+                    <telerik:GridBoundColumn DataField="CreatedDate" HeaderText="<%$ Resources:Resource, Date %>" ShowFilterIcon="false"
                         CurrentFilterFunction="Contains" FilterControlWidth="95%" AutoPostBackOnFilter="true">
                         <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" ForeColor="Black" />
                         <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="StatusName" HeaderText="Төлөв" ShowFilterIcon="false"
+                    <telerik:GridBoundColumn DataField="StatusName" HeaderText="<%$ Resources:Resource, PackageStatus %>" ShowFilterIcon="false"
                         CurrentFilterFunction="Contains" FilterControlWidth="95%" AutoPostBackOnFilter="true">
                         <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" ForeColor="Black" />
                         <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="MFee" HeaderText="Төлбөр" ShowFilterIcon="false"
+                    <telerik:GridBoundColumn DataField="MFee" HeaderText="<%$ Resources:Resource, Payment %>" ShowFilterIcon="false"
                         CurrentFilterFunction="StartsWith" FilterControlWidth="95%" AutoPostBackOnFilter="true">
                         <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" ForeColor="Black" />
                         <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="rOrderNumber" HeaderText="Order #" ShowFilterIcon="false"
+                    <telerik:GridBoundColumn DataField="rOrderNumber" HeaderText="<%$ Resources:Resource, OrderNo %>" ShowFilterIcon="false"
                         CurrentFilterFunction="StartsWith" FilterControlWidth="95%" AutoPostBackOnFilter="true">
                         <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" ForeColor="Black" />
                         <ItemStyle Font-Names="Tahoma" Font-Size="12px" />
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="rOrderTrackingNumber" HeaderText="Tracking #" ShowFilterIcon="false"
+                    <telerik:GridBoundColumn DataField="rOrderTrackingNumber" HeaderText="<%$ Resources:Resource, OrderTrackingNo %>" ShowFilterIcon="false"
                         CurrentFilterFunction="StartsWith" FilterControlWidth="95%" AutoPostBackOnFilter="true">
                         <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Font-Bold="true" ForeColor="Black" />
                         <ItemStyle Font-Names="Tahoma" Font-Size="12px" />
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="rItemsCount" HeaderText="Нийт бараа" ShowFilterIcon="false"
+                    <telerik:GridBoundColumn DataField="rItemsCount" HeaderText="<%$ Resources:Resource, TotalItem %>" ShowFilterIcon="false"
                         CurrentFilterFunction="StartsWith" FilterControlWidth="95%" AutoPostBackOnFilter="true">
                         <HeaderStyle HorizontalAlign="Center" Font-Size="12px" Width="70px" Font-Bold="true" ForeColor="Black" />
                         <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" />
@@ -64,7 +64,7 @@
                         <HeaderStyle HorizontalAlign="Center" Width="105px" />
                         <ItemStyle Font-Names="Tahoma" Font-Size="12px" HorizontalAlign="Center" Height="30px" />
                         <ItemTemplate>
-                            <a href="Check.aspx?v=<%# Eval("MBno")%>" class="btn btn-primary btn-sm" type="button" target="_blank" style="color: white;">Дэлгэрэнгүй</a>
+                            <a href="Check.aspx?v=<%# Eval("MBno")%>" class="btn btn-primary btn-sm" type="button" target="_blank" style="color: white;" > <%= Resources.Resource.Description %> </a>
                         </ItemTemplate>
                     </telerik:GridTemplateColumn>
                 </Columns>

@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Daiei
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class Home : BasePage
     {
         protected override void OnInit(EventArgs e)
         {

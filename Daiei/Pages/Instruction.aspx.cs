@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Daiei
 {
-    public partial class Instruction : System.Web.UI.Page
+    public partial class Instruction : BasePage
     {
 
     }

@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">
 
     <div class="site-title">
-        <div class="container">
-            <h1>Үйлчилгээний нөхцөл</h1>
+        <div class="container" runat="server">
+            <h1><%= Resources.Resource.TermsOfService %></h1>
         </div>
     </div>
 </asp:Content>
